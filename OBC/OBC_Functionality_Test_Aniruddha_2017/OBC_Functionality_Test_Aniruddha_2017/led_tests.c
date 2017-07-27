@@ -14,28 +14,28 @@ void led_test_m_config(void)
 {
 	DDRA=0x0F;
 	
-	transmit_UART0('a');
+	transmit_string_UART0("_a_");
+		
+	PORTA = 0x0F;
+	_delay_ms(200);
+	PORTA = 0xF0;
+	_delay_ms(200);
+
+	transmit_string_UART0("_b_");
+		
+	PORTA = 0x0F;
+	_delay_ms(200);
+	PORTA = 0xF0;
+	_delay_ms(200);
+	
+	transmit_string_UART0("_c_");
 	
 	PORTA = 0x0F;
 	_delay_ms(200);
 	PORTA = 0xF0;
 	_delay_ms(200);
 	
-	transmit_UART0('b');
-	
-	PORTA = 0x0F;
-	_delay_ms(200);
-	PORTA = 0xF0;
-	_delay_ms(200);
-	
-	transmit_UART0('c');
-	
-	PORTA = 0x0F;
-	_delay_ms(200);
-	PORTA = 0xF0;
-	_delay_ms(200);
-	
-	transmit_UART0('d');
+	transmit_string_UART0("_d_");
 	
 	PORTA = 0x0F;
 	_delay_ms(200);
