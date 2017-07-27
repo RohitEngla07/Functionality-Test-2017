@@ -38,7 +38,7 @@ int main(void)
 		// 2 second loop 
 		timer_reset_two_sec();
 		
-		// watchdog 
+		// Watchdog timers to ensure loop runs for 2 seconds  
 		wdt_enable(WDTO_2S);
 		wdt_reset();
 		
