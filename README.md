@@ -7,9 +7,9 @@ When you create a new atmel studio project ensure that you name the project prop
 
 like
 
-OBC-Power--GPS--FT2017--Aniruddha 
+OBCm-OBCs-Power--GPS--FT2017--Aniruddha {m for master and s for slave}  
 
-OBC--FT2017--Aniruddha
+OBCm--FT2017--Aniruddha   {m for master}
 
 See how codes till now are written. Ensure spacings.   
 
