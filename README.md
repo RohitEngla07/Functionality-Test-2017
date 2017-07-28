@@ -7,8 +7,10 @@ When you create a new atmel studio project ensure that you name the project prop
 
 like
 
-OBC-Power GPS FT2017 Aniruddha 
+OBC-Power--GPS--FT2017--Aniruddha 
 
-See how codes till now are written.  
+OBC--FT2017--Aniruddha
+
+See how codes till now are written. Ensure spacings.   
 
 Also make sure you create c executable project in atmel studio 
