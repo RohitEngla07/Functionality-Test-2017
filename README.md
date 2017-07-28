@@ -5,4 +5,4 @@ When you create a new atmel studio project ensure that you name the project prop
 <board_name>_Functionality_<Name>
 See how codes till now are written.  
 
-Also make a c executable project in atmel studio 
+Also make sure you create c executable project in atmel studio 
