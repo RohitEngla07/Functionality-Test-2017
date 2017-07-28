@@ -3,7 +3,7 @@ Functionality Tests on the flight hardware
 
 When you create a new atmel studio project ensure that you name the project properly. 
 
-<board_name>_FT2017_<Name>
+"<board_names>_<peripherals>_FT2017_<Name>"
 
 See how codes till now are written.  
 
