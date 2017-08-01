@@ -27,37 +27,13 @@
 #define TRUE 1
 #define FALSE 0
 
-/** 
- * @defgroup Modes
- * @brief Modes of operation of satellite
- * @todo Safe and emergency mode details to be obtained and coded
- */
-//@{
-/// During preflight checks
-#define PREFLIGHT 0
-/// Normal Mode
-#define NOMINAL 1
-/// Low power Mode
-#define SAFE 2
-/// Failure Mode
-#define EMERGENCY 3
-/// Detumbling Mode
-#define DETUMBLING 4
-//@}
-
-/**
- *@defgroup Preflight_check
- *@todo Check port and pin for preflight checks 
- */
-//@{
-///Port for preflight checks
-#define DDR_PF DDRA
-#define PORT_PF PINA
-/// Pin to check for preflight checks mode
-#define PIN_PF PA0
-//@}
+#define PBEACON     7
+#define PCONTROL    6
+#define PGPS        5
+#define PDOWNLINK   4
+#define POBC        3
+#define PMAG        2
+#define Uplink		1
 
 
-///Frame Time for the main loop
-#define FRAME_TIME 2
 #endif
