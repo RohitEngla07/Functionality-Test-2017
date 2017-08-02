@@ -33,6 +33,10 @@ int main(void)
 		led_test_m_b();
 		led_test_m_c();
 		led_test_m_d();
+		led_test_m_e();
+		led_test_m_f();
+		led_test_m_g();
+		led_test_m_h();
 		
     }
 }

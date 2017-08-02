@@ -41,6 +41,35 @@ void led_test_m_config(void)
 	PORTA = 0xF0;
 	_delay_ms(200);
 	
+	transmit_string_UART0("_e_");
+	
+	PORTA = 0x0F;
+	_delay_ms(200);
+	PORTA = 0xF0;
+	_delay_ms(200);
+	
+	transmit_string_UART0("_f_");
+	
+	PORTA = 0x0F;
+	_delay_ms(200);
+	PORTA = 0xF0;
+	_delay_ms(200);
+	
+	transmit_string_UART0("_g_");
+	
+	PORTA = 0x0F;
+	_delay_ms(200);
+	PORTA = 0xF0;
+	_delay_ms(200);
+	
+	transmit_string_UART0("_h_");
+	
+	PORTA = 0x0F;
+	_delay_ms(200);
+	PORTA = 0xF0;
+	_delay_ms(200);
+	
+	
 	PORTA = 0x00; 
 	_delay_ms(200);
 	
@@ -79,5 +108,45 @@ void led_test_m_d(void)
 	transmit_string_UART0(" led_d ");
 	_delay_ms(200);
 	PORTA &= 0b11101111;
+	_delay_ms(200);
+}
+
+
+void led_test_m_e(void)
+{
+	PORTA |= 0b10000000;
+	transmit_string_UART0(" led_e ");
+	_delay_ms(200);
+	PORTA &= 0b01111111;
+	_delay_ms(200);
+}
+
+
+void led_test_m_f(void)
+{
+	PORTA |= 0b10000000;
+	transmit_string_UART0(" led_f ");
+	_delay_ms(200);
+	PORTA &= 0b01111111;
+	_delay_ms(200);
+}
+
+
+void led_test_m_g(void)
+{
+	PORTA |= 0b10000000;
+	transmit_string_UART0(" led_g ");
+	_delay_ms(200);
+	PORTA &= 0b01111111;
+	_delay_ms(200);
+}
+
+
+void led_test_m_h(void)
+{
+	PORTA |= 0b10000000;
+	transmit_string_UART0(" led_h ");
+	_delay_ms(200);
+	PORTA &= 0b01111111;
 	_delay_ms(200);
 }

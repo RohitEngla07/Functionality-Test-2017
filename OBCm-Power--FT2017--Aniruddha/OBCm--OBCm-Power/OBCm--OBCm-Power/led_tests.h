@@ -19,6 +19,13 @@ void led_test_m_c(void);
 
 void led_test_m_d(void);
 
+void led_test_m_e(void);
+
+void led_test_m_f(void);
+
+void led_test_m_g(void);
+
+void led_test_m_h(void);
 
 
 #endif /* LED_TESTS_H_ */
