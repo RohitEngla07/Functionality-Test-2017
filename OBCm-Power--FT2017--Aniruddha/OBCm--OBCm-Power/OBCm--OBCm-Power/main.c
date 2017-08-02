@@ -18,14 +18,21 @@
 int main(void)
 {
 	// Initializations 
+	init_UART0();
 	
 	// Variables 
+	
 	
 	sei();
 	
     while (1) 
     {
 		// Loop 
+		led_test_m_config();
+		led_test_m_a();
+		led_test_m_b();
+		led_test_m_c();
+		led_test_m_d();
 		
     }
 }
