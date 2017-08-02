@@ -553,8 +553,8 @@ void led_test_m_d(void)
 
 void led_test_m_e(void)
 {
-	PORTA |= 0b10000000;
- 30c:	df 9a       	sbi	0x1b, 7	; 27
+	PORTA |= 0b00001000;
+ 30c:	db 9a       	sbi	0x1b, 3	; 27
 	transmit_string_UART0(" led_e ");
  30e:	80 e4       	ldi	r24, 0x40	; 64
  310:	91 e0       	ldi	r25, 0x01	; 1
@@ -569,8 +569,8 @@ void led_test_m_e(void)
  322:	00 c0       	rjmp	.+0      	; 0x324 <led_test_m_e+0x18>
  324:	00 00       	nop
 	_delay_ms(200);
-	PORTA &= 0b01111111;
- 326:	df 98       	cbi	0x1b, 7	; 27
+	PORTA &= 0b11110111;
+ 326:	db 98       	cbi	0x1b, 3	; 27
  328:	2f ef       	ldi	r18, 0xFF	; 255
  32a:	81 ee       	ldi	r24, 0xE1	; 225
  32c:	94 e0       	ldi	r25, 0x04	; 4
@@ -588,8 +588,8 @@ void led_test_m_e(void)
 
 void led_test_m_f(void)
 {
-	PORTA |= 0b10000000;
- 33c:	df 9a       	sbi	0x1b, 7	; 27
+	PORTA |= 0b00000100;
+ 33c:	da 9a       	sbi	0x1b, 2	; 27
 	transmit_string_UART0(" led_f ");
  33e:	88 e4       	ldi	r24, 0x48	; 72
  340:	91 e0       	ldi	r25, 0x01	; 1
@@ -604,8 +604,8 @@ void led_test_m_f(void)
  352:	00 c0       	rjmp	.+0      	; 0x354 <led_test_m_f+0x18>
  354:	00 00       	nop
 	_delay_ms(200);
-	PORTA &= 0b01111111;
- 356:	df 98       	cbi	0x1b, 7	; 27
+	PORTA &= 0b11111011;
+ 356:	da 98       	cbi	0x1b, 2	; 27
  358:	2f ef       	ldi	r18, 0xFF	; 255
  35a:	81 ee       	ldi	r24, 0xE1	; 225
  35c:	94 e0       	ldi	r25, 0x04	; 4
@@ -623,8 +623,8 @@ void led_test_m_f(void)
 
 void led_test_m_g(void)
 {
-	PORTA |= 0b10000000;
- 36c:	df 9a       	sbi	0x1b, 7	; 27
+	PORTA |= 0b00000010;
+ 36c:	d9 9a       	sbi	0x1b, 1	; 27
 	transmit_string_UART0(" led_g ");
  36e:	80 e5       	ldi	r24, 0x50	; 80
  370:	91 e0       	ldi	r25, 0x01	; 1
@@ -639,8 +639,8 @@ void led_test_m_g(void)
  382:	00 c0       	rjmp	.+0      	; 0x384 <led_test_m_g+0x18>
  384:	00 00       	nop
 	_delay_ms(200);
-	PORTA &= 0b01111111;
- 386:	df 98       	cbi	0x1b, 7	; 27
+	PORTA &= 0b11111101;
+ 386:	d9 98       	cbi	0x1b, 1	; 27
  388:	2f ef       	ldi	r18, 0xFF	; 255
  38a:	81 ee       	ldi	r24, 0xE1	; 225
  38c:	94 e0       	ldi	r25, 0x04	; 4
@@ -658,8 +658,8 @@ void led_test_m_g(void)
 
 void led_test_m_h(void)
 {
-	PORTA |= 0b10000000;
- 39c:	df 9a       	sbi	0x1b, 7	; 27
+	PORTA |= 0b00000001;
+ 39c:	d8 9a       	sbi	0x1b, 0	; 27
 	transmit_string_UART0(" led_h ");
  39e:	88 e5       	ldi	r24, 0x58	; 88
  3a0:	91 e0       	ldi	r25, 0x01	; 1
@@ -674,8 +674,8 @@ void led_test_m_h(void)
  3b2:	00 c0       	rjmp	.+0      	; 0x3b4 <led_test_m_h+0x18>
  3b4:	00 00       	nop
 	_delay_ms(200);
-	PORTA &= 0b01111111;
- 3b6:	df 98       	cbi	0x1b, 7	; 27
+	PORTA &= 0b11111110;
+ 3b6:	d8 98       	cbi	0x1b, 0	; 27
  3b8:	2f ef       	ldi	r18, 0xFF	; 255
  3ba:	81 ee       	ldi	r24, 0xE1	; 225
  3bc:	94 e0       	ldi	r25, 0x04	; 4
