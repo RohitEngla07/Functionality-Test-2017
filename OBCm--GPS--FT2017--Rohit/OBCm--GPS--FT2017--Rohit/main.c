@@ -5,14 +5,28 @@
  * Author : Rohit Engl
  */ 
 
+
+#define F_CPU 8000000
 #include <avr/io.h>
+#include "common.h"
+#include "timer.h"
+#include "uart.h"
+#include "spi.h"
+#include "i2c.h"
+#include "led_tests.h"
 
 
 int main(void)
 {
-    /* Replace with your application code */
+	//Initializations 
+	init_UART0();
+	
+	//Interrupt
+	sei();
+		
     while (1) 
     {
+		
     }
 }
 
