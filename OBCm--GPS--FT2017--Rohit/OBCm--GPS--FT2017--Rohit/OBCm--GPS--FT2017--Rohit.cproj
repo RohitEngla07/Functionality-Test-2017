@@ -123,6 +123,12 @@
     <Compile Include="common.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="gps.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gps.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="i2c.c">
       <SubType>compile</SubType>
     </Compile>

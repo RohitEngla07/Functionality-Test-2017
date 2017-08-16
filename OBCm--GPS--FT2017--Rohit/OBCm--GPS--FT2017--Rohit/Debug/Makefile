@@ -37,6 +37,7 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../gps.c \
 ../i2c.c \
 ../led_tests.c \
 ../main.c \
@@ -52,6 +53,7 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+gps.o \
 i2c.o \
 led_tests.o \
 main.o \
@@ -60,6 +62,7 @@ timer.o \
 uart.o
 
 OBJS_AS_ARGS +=  \
+gps.o \
 i2c.o \
 led_tests.o \
 main.o \
@@ -68,6 +71,7 @@ timer.o \
 uart.o
 
 C_DEPS +=  \
+gps.d \
 i2c.d \
 led_tests.d \
 main.d \
@@ -76,6 +80,7 @@ timer.d \
 uart.d
 
 C_DEPS_AS_ARGS +=  \
+gps.d \
 i2c.d \
 led_tests.d \
 main.d \
@@ -97,6 +102,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 

@@ -3,29 +3,31 @@ OBCm--GPS--FT2017--Rohit.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000030  00800100  0000020c  00000280  2**0
+  0 .data         00000032  00800100  00000414  000004a8  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         0000020c  00000000  00000000  00000074  2**1
+  1 .text         00000414  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      00000030  00000000  00000000  000002b0  2**0
+  2 .bss          0000002b  00800132  00800132  000004da  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000004da  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000002e0  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  0000050c  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 000000b8  00000000  00000000  00000320  2**0
+  5 .debug_aranges 00000108  00000000  00000000  0000054c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   00000fca  00000000  00000000  000003d8  2**0
+  6 .debug_info   00001822  00000000  00000000  00000654  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000981  00000000  00000000  000013a2  2**0
+  7 .debug_abbrev 00000b29  00000000  00000000  00001e76  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000006aa  00000000  00000000  00001d23  2**0
+  8 .debug_line   00000a9b  00000000  00000000  0000299f  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000140  00000000  00000000  000023d0  2**2
+  9 .debug_frame  0000025c  00000000  00000000  0000343c  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    00000530  00000000  00000000  00002510  2**0
+ 10 .debug_str    000005f5  00000000  00000000  00003698  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000005bf  00000000  00000000  00002a40  2**0
+ 11 .debug_loc    00000cb8  00000000  00000000  00003c8d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000088  00000000  00000000  00002fff  2**0
+ 12 .debug_ranges 000000e0  00000000  00000000  00004945  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -33,73 +35,73 @@ Disassembly of section .text:
 00000000 <__vectors>:
    0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
    2:	00 00       	nop
-   4:	58 c0       	rjmp	.+176    	; 0xb6 <__bad_interrupt>
+   4:	60 c0       	rjmp	.+192    	; 0xc6 <__bad_interrupt>
    6:	00 00       	nop
-   8:	56 c0       	rjmp	.+172    	; 0xb6 <__bad_interrupt>
+   8:	5e c0       	rjmp	.+188    	; 0xc6 <__bad_interrupt>
    a:	00 00       	nop
-   c:	54 c0       	rjmp	.+168    	; 0xb6 <__bad_interrupt>
+   c:	5c c0       	rjmp	.+184    	; 0xc6 <__bad_interrupt>
    e:	00 00       	nop
-  10:	52 c0       	rjmp	.+164    	; 0xb6 <__bad_interrupt>
+  10:	5a c0       	rjmp	.+180    	; 0xc6 <__bad_interrupt>
   12:	00 00       	nop
-  14:	50 c0       	rjmp	.+160    	; 0xb6 <__bad_interrupt>
+  14:	58 c0       	rjmp	.+176    	; 0xc6 <__bad_interrupt>
   16:	00 00       	nop
-  18:	4e c0       	rjmp	.+156    	; 0xb6 <__bad_interrupt>
+  18:	56 c0       	rjmp	.+172    	; 0xc6 <__bad_interrupt>
   1a:	00 00       	nop
-  1c:	4c c0       	rjmp	.+152    	; 0xb6 <__bad_interrupt>
+  1c:	54 c0       	rjmp	.+168    	; 0xc6 <__bad_interrupt>
   1e:	00 00       	nop
-  20:	4a c0       	rjmp	.+148    	; 0xb6 <__bad_interrupt>
+  20:	52 c0       	rjmp	.+164    	; 0xc6 <__bad_interrupt>
   22:	00 00       	nop
-  24:	48 c0       	rjmp	.+144    	; 0xb6 <__bad_interrupt>
+  24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
   26:	00 00       	nop
-  28:	46 c0       	rjmp	.+140    	; 0xb6 <__bad_interrupt>
+  28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
   2a:	00 00       	nop
-  2c:	44 c0       	rjmp	.+136    	; 0xb6 <__bad_interrupt>
+  2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
   2e:	00 00       	nop
-  30:	42 c0       	rjmp	.+132    	; 0xb6 <__bad_interrupt>
+  30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
   32:	00 00       	nop
-  34:	40 c0       	rjmp	.+128    	; 0xb6 <__bad_interrupt>
+  34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
   36:	00 00       	nop
-  38:	3e c0       	rjmp	.+124    	; 0xb6 <__bad_interrupt>
+  38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
   3a:	00 00       	nop
-  3c:	3c c0       	rjmp	.+120    	; 0xb6 <__bad_interrupt>
+  3c:	44 c0       	rjmp	.+136    	; 0xc6 <__bad_interrupt>
   3e:	00 00       	nop
-  40:	3a c0       	rjmp	.+116    	; 0xb6 <__bad_interrupt>
+  40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
   42:	00 00       	nop
-  44:	38 c0       	rjmp	.+112    	; 0xb6 <__bad_interrupt>
+  44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
   46:	00 00       	nop
-  48:	36 c0       	rjmp	.+108    	; 0xb6 <__bad_interrupt>
+  48:	ff c0       	rjmp	.+510    	; 0x248 <__vector_18>
   4a:	00 00       	nop
-  4c:	34 c0       	rjmp	.+104    	; 0xb6 <__bad_interrupt>
+  4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
   4e:	00 00       	nop
-  50:	32 c0       	rjmp	.+100    	; 0xb6 <__bad_interrupt>
+  50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
   52:	00 00       	nop
-  54:	30 c0       	rjmp	.+96     	; 0xb6 <__bad_interrupt>
+  54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
   56:	00 00       	nop
-  58:	2e c0       	rjmp	.+92     	; 0xb6 <__bad_interrupt>
+  58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
   5a:	00 00       	nop
-  5c:	2c c0       	rjmp	.+88     	; 0xb6 <__bad_interrupt>
+  5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
   5e:	00 00       	nop
-  60:	2a c0       	rjmp	.+84     	; 0xb6 <__bad_interrupt>
+  60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
   62:	00 00       	nop
-  64:	28 c0       	rjmp	.+80     	; 0xb6 <__bad_interrupt>
+  64:	30 c0       	rjmp	.+96     	; 0xc6 <__bad_interrupt>
   66:	00 00       	nop
-  68:	26 c0       	rjmp	.+76     	; 0xb6 <__bad_interrupt>
+  68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
   6a:	00 00       	nop
-  6c:	24 c0       	rjmp	.+72     	; 0xb6 <__bad_interrupt>
+  6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
   6e:	00 00       	nop
-  70:	22 c0       	rjmp	.+68     	; 0xb6 <__bad_interrupt>
+  70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
   72:	00 00       	nop
-  74:	20 c0       	rjmp	.+64     	; 0xb6 <__bad_interrupt>
+  74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
   76:	00 00       	nop
-  78:	1e c0       	rjmp	.+60     	; 0xb6 <__bad_interrupt>
+  78:	26 c0       	rjmp	.+76     	; 0xc6 <__bad_interrupt>
   7a:	00 00       	nop
-  7c:	1c c0       	rjmp	.+56     	; 0xb6 <__bad_interrupt>
+  7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
   7e:	00 00       	nop
-  80:	1a c0       	rjmp	.+52     	; 0xb6 <__bad_interrupt>
+  80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
   82:	00 00       	nop
-  84:	18 c0       	rjmp	.+48     	; 0xb6 <__bad_interrupt>
+  84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
   86:	00 00       	nop
-  88:	16 c0       	rjmp	.+44     	; 0xb6 <__bad_interrupt>
+  88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
 	...
 
 0000008c <__ctors_end>:
@@ -114,284 +116,753 @@ Disassembly of section .text:
   98:	11 e0       	ldi	r17, 0x01	; 1
   9a:	a0 e0       	ldi	r26, 0x00	; 0
   9c:	b1 e0       	ldi	r27, 0x01	; 1
-  9e:	ec e0       	ldi	r30, 0x0C	; 12
-  a0:	f2 e0       	ldi	r31, 0x02	; 2
+  9e:	e4 e1       	ldi	r30, 0x14	; 20
+  a0:	f4 e0       	ldi	r31, 0x04	; 4
   a2:	00 e0       	ldi	r16, 0x00	; 0
   a4:	0b bf       	out	0x3b, r16	; 59
   a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
   a8:	07 90       	elpm	r0, Z+
   aa:	0d 92       	st	X+, r0
-  ac:	a0 33       	cpi	r26, 0x30	; 48
+  ac:	a2 33       	cpi	r26, 0x32	; 50
   ae:	b1 07       	cpc	r27, r17
   b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
-  b2:	88 d0       	rcall	.+272    	; 0x1c4 <main>
-  b4:	a9 c0       	rjmp	.+338    	; 0x208 <_exit>
 
-000000b6 <__bad_interrupt>:
-  b6:	a4 cf       	rjmp	.-184    	; 0x0 <__vectors>
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	a2 e3       	ldi	r26, 0x32	; 50
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
 
-000000b8 <led_test_m_config>:
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	ad 35       	cpi	r26, 0x5D	; 93
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	6d d1       	rcall	.+730    	; 0x39e <main>
+  c4:	a5 c1       	rjmp	.+842    	; 0x410 <_exit>
+
+000000c6 <__bad_interrupt>:
+  c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+
+000000c8 <get_position>:
+		get_DOP();//will execute if data is time
+	}
+}
+
+void get_position()
+{
+  c8:	0f 93       	push	r16
+  ca:	1f 93       	push	r17
+  cc:	cf 93       	push	r28
+  ce:	df 93       	push	r29
+  d0:	c9 e3       	ldi	r28, 0x39	; 57
+  d2:	d1 e0       	ldi	r29, 0x01	; 1
+  d4:	0d e3       	ldi	r16, 0x3D	; 61
+//for x position
+	
+	for(int i=0;i<4;i++)
+	{
+		position_x[i]= receive_UART0();
+  d6:	11 e0       	ldi	r17, 0x01	; 1
+		transmit_string_UART0(position_x[i]);
+  d8:	8b d1       	rcall	.+790    	; 0x3f0 <receive_UART0>
+  da:	89 93       	st	Y+, r24
+
+void get_position()
+{
+//for x position
+	
+	for(int i=0;i<4;i++)
+  dc:	90 e0       	ldi	r25, 0x00	; 0
+  de:	8c d1       	rcall	.+792    	; 0x3f8 <transmit_string_UART0>
+  e0:	c0 17       	cp	r28, r16
+  e2:	d1 07       	cpc	r29, r17
+  e4:	c9 f7       	brne	.-14     	; 0xd8 <get_position+0x10>
+  e6:	cd e4       	ldi	r28, 0x4D	; 77
+
+//for y position
+
+	for(int i=0;i<4;i++)
+	{
+		position_y[i]= receive_UART0();
+  e8:	d1 e0       	ldi	r29, 0x01	; 1
+  ea:	01 e5       	ldi	r16, 0x51	; 81
+		transmit_string_UART0(position_y[i]);
+  ec:	11 e0       	ldi	r17, 0x01	; 1
+  ee:	80 d1       	rcall	.+768    	; 0x3f0 <receive_UART0>
+  f0:	89 93       	st	Y+, r24
+		transmit_string_UART0(position_x[i]);
+	}	
+
+//for y position
+
+	for(int i=0;i<4;i++)
+  f2:	90 e0       	ldi	r25, 0x00	; 0
+  f4:	81 d1       	rcall	.+770    	; 0x3f8 <transmit_string_UART0>
+  f6:	0c 17       	cp	r16, r28
+  f8:	1d 07       	cpc	r17, r29
+  fa:	c9 f7       	brne	.-14     	; 0xee <get_position+0x26>
+
+//for z position
+
+	for(int i=0;i<4;i++)
+	{
+		position_z[i]= receive_UART0();
+  fc:	c5 e3       	ldi	r28, 0x35	; 53
+  fe:	d1 e0       	ldi	r29, 0x01	; 1
+ 100:	09 e3       	ldi	r16, 0x39	; 57
+		transmit_string_UART0(position_z[i]);
+ 102:	11 e0       	ldi	r17, 0x01	; 1
+ 104:	75 d1       	rcall	.+746    	; 0x3f0 <receive_UART0>
+ 106:	89 93       	st	Y+, r24
+		transmit_string_UART0(position_y[i]);
+	}
+
+//for z position
+
+	for(int i=0;i<4;i++)
+ 108:	90 e0       	ldi	r25, 0x00	; 0
+ 10a:	76 d1       	rcall	.+748    	; 0x3f8 <transmit_string_UART0>
+ 10c:	0c 17       	cp	r16, r28
+	{
+		position_z[i]= receive_UART0();
+		transmit_string_UART0(position_z[i]);
+	}
+
+}
+ 10e:	1d 07       	cpc	r17, r29
+ 110:	c9 f7       	brne	.-14     	; 0x104 <get_position+0x3c>
+ 112:	df 91       	pop	r29
+ 114:	cf 91       	pop	r28
+ 116:	1f 91       	pop	r17
+ 118:	0f 91       	pop	r16
+ 11a:	08 95       	ret
+
+0000011c <get_velocity>:
+
+void get_velocity()
+{
+ 11c:	0f 93       	push	r16
+ 11e:	1f 93       	push	r17
+ 120:	cf 93       	push	r28
+ 122:	df 93       	push	r29
+ 124:	c9 e5       	ldi	r28, 0x59	; 89
+ 126:	d1 e0       	ldi	r29, 0x01	; 1
+ 128:	0d e5       	ldi	r16, 0x5D	; 93
+
+//for x velocity	
+
+	for(int i=0;i<4;i++)
+	{
+		velocity_x[i]=receive_UART0();
+ 12a:	11 e0       	ldi	r17, 0x01	; 1
+		transmit_string_UART0(velocity_x[i]);
+ 12c:	61 d1       	rcall	.+706    	; 0x3f0 <receive_UART0>
+ 12e:	89 93       	st	Y+, r24
+void get_velocity()
+{
+
+//for x velocity	
+
+	for(int i=0;i<4;i++)
+ 130:	90 e0       	ldi	r25, 0x00	; 0
+ 132:	62 d1       	rcall	.+708    	; 0x3f8 <transmit_string_UART0>
+ 134:	c0 17       	cp	r28, r16
+ 136:	d1 07       	cpc	r29, r17
+ 138:	c9 f7       	brne	.-14     	; 0x12c <get_velocity+0x10>
+ 13a:	cd e3       	ldi	r28, 0x3D	; 61
+
+//for y velocity
+
+	for(int i=0;i<4;i++)
+	{
+		velocity_y[i]=receive_UART0();
+ 13c:	d1 e0       	ldi	r29, 0x01	; 1
+ 13e:	01 e4       	ldi	r16, 0x41	; 65
+		transmit_string_UART0(velocity_y[i]);
+ 140:	11 e0       	ldi	r17, 0x01	; 1
+ 142:	56 d1       	rcall	.+684    	; 0x3f0 <receive_UART0>
+ 144:	89 93       	st	Y+, r24
+		transmit_string_UART0(velocity_x[i]);
+	}
+
+//for y velocity
+
+	for(int i=0;i<4;i++)
+ 146:	90 e0       	ldi	r25, 0x00	; 0
+ 148:	57 d1       	rcall	.+686    	; 0x3f8 <transmit_string_UART0>
+ 14a:	0c 17       	cp	r16, r28
+ 14c:	1d 07       	cpc	r17, r29
+ 14e:	c9 f7       	brne	.-14     	; 0x142 <get_velocity+0x26>
+
+//for z velocity
+
+	for(int i=0;i<4;i++)
+	{
+		velocity_z[i]=receive_UART0();
+ 150:	c1 e5       	ldi	r28, 0x51	; 81
+ 152:	d1 e0       	ldi	r29, 0x01	; 1
+ 154:	05 e5       	ldi	r16, 0x55	; 85
+		transmit_string_UART0(velocity_z[i]);
+ 156:	11 e0       	ldi	r17, 0x01	; 1
+ 158:	4b d1       	rcall	.+662    	; 0x3f0 <receive_UART0>
+ 15a:	89 93       	st	Y+, r24
+		transmit_string_UART0(velocity_y[i]);
+	}
+
+//for z velocity
+
+	for(int i=0;i<4;i++)
+ 15c:	90 e0       	ldi	r25, 0x00	; 0
+ 15e:	4c d1       	rcall	.+664    	; 0x3f8 <transmit_string_UART0>
+ 160:	0c 17       	cp	r16, r28
+	{
+		velocity_z[i]=receive_UART0();
+		transmit_string_UART0(velocity_z[i]);
+	}
+
+}
+ 162:	1d 07       	cpc	r17, r29
+ 164:	c9 f7       	brne	.-14     	; 0x158 <get_velocity+0x3c>
+ 166:	df 91       	pop	r29
+ 168:	cf 91       	pop	r28
+ 16a:	1f 91       	pop	r17
+ 16c:	0f 91       	pop	r16
+ 16e:	08 95       	ret
+
+00000170 <get_time>:
+
+void get_time()
+{
+ 170:	0f 93       	push	r16
+ 172:	1f 93       	push	r17
+ 174:	cf 93       	push	r28
+ 176:	df 93       	push	r29
+ 178:	c2 e3       	ldi	r28, 0x32	; 50
+ 17a:	d1 e0       	ldi	r29, 0x01	; 1
+ 17c:	05 e3       	ldi	r16, 0x35	; 53
+
+	//for time in hours(1 byte)-minutes(1)-second(1)
+
+	for(int i=0;i<3;i++)
+	{
+		TIME[i]=receive_UART0();
+ 17e:	11 e0       	ldi	r17, 0x01	; 1
+		transmit_string_UART0(TIME[i]);
+ 180:	37 d1       	rcall	.+622    	; 0x3f0 <receive_UART0>
+ 182:	89 93       	st	Y+, r24
+void get_time()
+{
+
+	//for time in hours(1 byte)-minutes(1)-second(1)
+
+	for(int i=0;i<3;i++)
+ 184:	90 e0       	ldi	r25, 0x00	; 0
+ 186:	38 d1       	rcall	.+624    	; 0x3f8 <transmit_string_UART0>
+ 188:	c0 17       	cp	r28, r16
+ 18a:	d1 07       	cpc	r29, r17
+ 18c:	c9 f7       	brne	.-14     	; 0x180 <get_time+0x10>
+ 18e:	c5 e4       	ldi	r28, 0x45	; 69
+
+	//for date in format date(1)-month(1)-year(2)
+
+	for(int i=0;i<4;i++)
+	{
+		Date[i]=receive_UART0();
+ 190:	d1 e0       	ldi	r29, 0x01	; 1
+ 192:	09 e4       	ldi	r16, 0x49	; 73
+		transmit_string_UART0(Date[i]);
+ 194:	11 e0       	ldi	r17, 0x01	; 1
+ 196:	2c d1       	rcall	.+600    	; 0x3f0 <receive_UART0>
+ 198:	89 93       	st	Y+, r24
+		transmit_string_UART0(TIME[i]);
+	}
+
+	//for date in format date(1)-month(1)-year(2)
+
+	for(int i=0;i<4;i++)
+ 19a:	90 e0       	ldi	r25, 0x00	; 0
+ 19c:	2d d1       	rcall	.+602    	; 0x3f8 <transmit_string_UART0>
+ 19e:	c0 17       	cp	r28, r16
+	{
+		Date[i]=receive_UART0();
+		transmit_string_UART0(Date[i]);
+	}
+
+}
+ 1a0:	d1 07       	cpc	r29, r17
+ 1a2:	c9 f7       	brne	.-14     	; 0x196 <get_time+0x26>
+ 1a4:	df 91       	pop	r29
+ 1a6:	cf 91       	pop	r28
+ 1a8:	1f 91       	pop	r17
+ 1aa:	0f 91       	pop	r16
+ 1ac:	08 95       	ret
+
+000001ae <get_DOP>:
+
+void get_DOP()//checking dilution of precision
+{
+ 1ae:	0f 93       	push	r16
+ 1b0:	1f 93       	push	r17
+ 1b2:	cf 93       	push	r28
+	
+	for(int i=0;i<2;i++)
+	{
+		HDOP[i]=receive_UART0();
+ 1b4:	df 93       	push	r29
+ 1b6:	1c d1       	rcall	.+568    	; 0x3f0 <receive_UART0>
+ 1b8:	c7 e5       	ldi	r28, 0x57	; 87
+		transmit_string_UART0(HDOP[i]);
+ 1ba:	d1 e0       	ldi	r29, 0x01	; 1
+void get_DOP()//checking dilution of precision
+{
+	
+	for(int i=0;i<2;i++)
+	{
+		HDOP[i]=receive_UART0();
+ 1bc:	88 83       	st	Y, r24
+		transmit_string_UART0(HDOP[i]);
+ 1be:	90 e0       	ldi	r25, 0x00	; 0
+ 1c0:	1b d1       	rcall	.+566    	; 0x3f8 <transmit_string_UART0>
+ 1c2:	16 d1       	rcall	.+556    	; 0x3f0 <receive_UART0>
+	}
+	
+	for(int i=0;i<2;i++)
+	{
+		PDOP[i]=receive_UART0();
+ 1c4:	89 83       	std	Y+1, r24	; 0x01
+ 1c6:	90 e0       	ldi	r25, 0x00	; 0
+		transmit_string_UART0(PDOP[i]);
+ 1c8:	17 d1       	rcall	.+558    	; 0x3f8 <transmit_string_UART0>
+ 1ca:	12 d1       	rcall	.+548    	; 0x3f0 <receive_UART0>
+		transmit_string_UART0(HDOP[i]);
+	}
+	
+	for(int i=0;i<2;i++)
+	{
+		PDOP[i]=receive_UART0();
+ 1cc:	c5 e5       	ldi	r28, 0x55	; 85
+ 1ce:	d1 e0       	ldi	r29, 0x01	; 1
+		transmit_string_UART0(PDOP[i]);
+ 1d0:	88 83       	st	Y, r24
+ 1d2:	90 e0       	ldi	r25, 0x00	; 0
+ 1d4:	11 d1       	rcall	.+546    	; 0x3f8 <transmit_string_UART0>
+ 1d6:	0c d1       	rcall	.+536    	; 0x3f0 <receive_UART0>
+ 1d8:	89 83       	std	Y+1, r24	; 0x01
+ 1da:	90 e0       	ldi	r25, 0x00	; 0
+	}
+	
+	for(int i=0;i<4;i++)
+	{
+		GPS_second[i]=receive_UART0();
+ 1dc:	0d d1       	rcall	.+538    	; 0x3f8 <transmit_string_UART0>
+ 1de:	c9 e4       	ldi	r28, 0x49	; 73
+ 1e0:	d1 e0       	ldi	r29, 0x01	; 1
+		transmit_string_UART0(GPS_second[i]);
+ 1e2:	0d e4       	ldi	r16, 0x4D	; 77
+ 1e4:	11 e0       	ldi	r17, 0x01	; 1
+ 1e6:	04 d1       	rcall	.+520    	; 0x3f0 <receive_UART0>
+	{
+		PDOP[i]=receive_UART0();
+		transmit_string_UART0(PDOP[i]);
+	}
+	
+	for(int i=0;i<4;i++)
+ 1e8:	89 93       	st	Y+, r24
+ 1ea:	90 e0       	ldi	r25, 0x00	; 0
+ 1ec:	05 d1       	rcall	.+522    	; 0x3f8 <transmit_string_UART0>
+	{
+		GPS_second[i]=receive_UART0();
+		transmit_string_UART0(GPS_second[i]);
+	}
+}
+ 1ee:	0c 17       	cp	r16, r28
+ 1f0:	1d 07       	cpc	r17, r29
+ 1f2:	c9 f7       	brne	.-14     	; 0x1e6 <get_DOP+0x38>
+ 1f4:	df 91       	pop	r29
+ 1f6:	cf 91       	pop	r28
+ 1f8:	1f 91       	pop	r17
+ 1fa:	0f 91       	pop	r16
+ 1fc:	08 95       	ret
+
+000001fe <message_ID>:
+{
+	//for(int i=0;i<4;i++)
+	//{
+		//message[i]=receive_UART0();
+	//}
+	if(message[2]==0x04 && message[3]== 0xAC)//have to check that it will be AC04 or 04AC
+ 1fe:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <message+0x2>
+ 202:	84 30       	cpi	r24, 0x04	; 4
+ 204:	29 f4       	brne	.+10     	; 0x210 <message_ID+0x12>
+ 206:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <message+0x3>
+ 20a:	8c 3a       	cpi	r24, 0xAC	; 172
+	{
+		get_position();//will execute if data is position
+ 20c:	99 f4       	brne	.+38     	; 0x234 <message_ID+0x36>
+	}
+	if(message[2]==0x05 && message[3]== 0xAC)
+ 20e:	5c df       	rcall	.-328    	; 0xc8 <get_position>
+ 210:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <message+0x2>
+ 214:	85 30       	cpi	r24, 0x05	; 5
+ 216:	29 f4       	brne	.+10     	; 0x222 <message_ID+0x24>
+ 218:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <message+0x3>
+	{
+		get_velocity();//will execute if data is velocity
+ 21c:	8c 3a       	cpi	r24, 0xAC	; 172
+ 21e:	99 f4       	brne	.+38     	; 0x246 <message_ID+0x48>
+	}
+	if(message[2]==0x0F && message[3]== 0xAC)
+ 220:	7d df       	rcall	.-262    	; 0x11c <get_velocity>
+ 222:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <message+0x2>
+ 226:	8f 30       	cpi	r24, 0x0F	; 15
+ 228:	29 f4       	brne	.+10     	; 0x234 <message_ID+0x36>
+ 22a:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <message+0x3>
+	{
+		get_time();//will execute if data is time
+ 22e:	8c 3a       	cpi	r24, 0xAC	; 172
+ 230:	51 f4       	brne	.+20     	; 0x246 <message_ID+0x48>
+	}
+	if(message[2]==0x0B && message[3]== 0xAC)
+ 232:	9e df       	rcall	.-196    	; 0x170 <get_time>
+ 234:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <message+0x2>
+ 238:	8b 30       	cpi	r24, 0x0B	; 11
+ 23a:	29 f4       	brne	.+10     	; 0x246 <message_ID+0x48>
+ 23c:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <message+0x3>
+	{
+		get_DOP();//will execute if data is time
+ 240:	8c 3a       	cpi	r24, 0xAC	; 172
+ 242:	09 f4       	brne	.+2      	; 0x246 <message_ID+0x48>
+ 244:	b4 cf       	rjmp	.-152    	; 0x1ae <get_DOP>
+ 246:	08 95       	ret
+
+00000248 <__vector_18>:
+uint8_t GPS_second[4];
+uint8_t message[4];
+int i=1;
+
+ISR(USART0_RX_vect)
+{
+ 248:	1f 92       	push	r1
+ 24a:	0f 92       	push	r0
+ 24c:	0f b6       	in	r0, 0x3f	; 63
+ 24e:	0f 92       	push	r0
+ 250:	11 24       	eor	r1, r1
+ 252:	0b b6       	in	r0, 0x3b	; 59
+ 254:	0f 92       	push	r0
+ 256:	2f 93       	push	r18
+ 258:	3f 93       	push	r19
+ 25a:	4f 93       	push	r20
+ 25c:	5f 93       	push	r21
+ 25e:	6f 93       	push	r22
+ 260:	7f 93       	push	r23
+ 262:	8f 93       	push	r24
+ 264:	9f 93       	push	r25
+ 266:	af 93       	push	r26
+ 268:	bf 93       	push	r27
+ 26a:	ef 93       	push	r30
+ 26c:	ff 93       	push	r31
+	message[i]=UDR0;
+ 26e:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 272:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_start+0x1>
+ 276:	2c b1       	in	r18, 0x0c	; 12
+ 278:	fc 01       	movw	r30, r24
+ 27a:	ef 5b       	subi	r30, 0xBF	; 191
+ 27c:	fe 4f       	sbci	r31, 0xFE	; 254
+ 27e:	20 83       	st	Z, r18
+	i=i+1;
+ 280:	01 96       	adiw	r24, 0x01	; 1
+ 282:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_start+0x1>
+ 286:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+	if(i==3)
+ 28a:	03 97       	sbiw	r24, 0x03	; 3
+	{
+		message_ID();
+ 28c:	39 f4       	brne	.+14     	; 0x29c <__vector_18+0x54>
+		i=1;
+ 28e:	b7 df       	rcall	.-146    	; 0x1fe <message_ID>
+ 290:	81 e0       	ldi	r24, 0x01	; 1
+ 292:	90 e0       	ldi	r25, 0x00	; 0
+ 294:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_start+0x1>
+ 298:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+	}
+}
+ 29c:	ff 91       	pop	r31
+ 29e:	ef 91       	pop	r30
+ 2a0:	bf 91       	pop	r27
+ 2a2:	af 91       	pop	r26
+ 2a4:	9f 91       	pop	r25
+ 2a6:	8f 91       	pop	r24
+ 2a8:	7f 91       	pop	r23
+ 2aa:	6f 91       	pop	r22
+ 2ac:	5f 91       	pop	r21
+ 2ae:	4f 91       	pop	r20
+ 2b0:	3f 91       	pop	r19
+ 2b2:	2f 91       	pop	r18
+ 2b4:	0f 90       	pop	r0
+ 2b6:	0b be       	out	0x3b, r0	; 59
+ 2b8:	0f 90       	pop	r0
+ 2ba:	0f be       	out	0x3f, r0	; 63
+ 2bc:	0f 90       	pop	r0
+ 2be:	1f 90       	pop	r1
+ 2c0:	18 95       	reti
+
+000002c2 <led_test_m_config>:
 #include "led_tests.h"
 #include "uart.h"
 #include <avr/io.h>
 
 void led_test_m_config(void)
 {
-  b8:	cf 93       	push	r28
-  ba:	df 93       	push	r29
+ 2c2:	cf 93       	push	r28
+ 2c4:	df 93       	push	r29
 	DDRA=0x0F;
-  bc:	cf e0       	ldi	r28, 0x0F	; 15
-  be:	ca bb       	out	0x1a, r28	; 26
+ 2c6:	cf e0       	ldi	r28, 0x0F	; 15
+ 2c8:	ca bb       	out	0x1a, r28	; 26
 	
 	transmit_string_UART0("_a_");
-  c0:	80 e0       	ldi	r24, 0x00	; 0
-  c2:	91 e0       	ldi	r25, 0x01	; 1
-  c4:	95 d0       	rcall	.+298    	; 0x1f0 <transmit_string_UART0>
+ 2ca:	82 e0       	ldi	r24, 0x02	; 2
+ 2cc:	91 e0       	ldi	r25, 0x01	; 1
+ 2ce:	94 d0       	rcall	.+296    	; 0x3f8 <transmit_string_UART0>
 		
 	PORTA = 0x0F;
-  c6:	cb bb       	out	0x1b, r28	; 27
+ 2d0:	cb bb       	out	0x1b, r28	; 27
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  c8:	2f ef       	ldi	r18, 0xFF	; 255
-  ca:	81 ee       	ldi	r24, 0xE1	; 225
-  cc:	94 e0       	ldi	r25, 0x04	; 4
-  ce:	21 50       	subi	r18, 0x01	; 1
-  d0:	80 40       	sbci	r24, 0x00	; 0
-  d2:	90 40       	sbci	r25, 0x00	; 0
-  d4:	e1 f7       	brne	.-8      	; 0xce <led_test_m_config+0x16>
-  d6:	00 c0       	rjmp	.+0      	; 0xd8 <led_test_m_config+0x20>
-  d8:	00 00       	nop
+ 2d2:	2f ef       	ldi	r18, 0xFF	; 255
+ 2d4:	81 ee       	ldi	r24, 0xE1	; 225
+ 2d6:	94 e0       	ldi	r25, 0x04	; 4
+ 2d8:	21 50       	subi	r18, 0x01	; 1
+ 2da:	80 40       	sbci	r24, 0x00	; 0
+ 2dc:	90 40       	sbci	r25, 0x00	; 0
+ 2de:	e1 f7       	brne	.-8      	; 0x2d8 <led_test_m_config+0x16>
+ 2e0:	00 c0       	rjmp	.+0      	; 0x2e2 <led_test_m_config+0x20>
+ 2e2:	00 00       	nop
 	_delay_ms(200);
 	PORTA = 0xF0;
-  da:	d0 ef       	ldi	r29, 0xF0	; 240
-  dc:	db bb       	out	0x1b, r29	; 27
-  de:	2f ef       	ldi	r18, 0xFF	; 255
-  e0:	81 ee       	ldi	r24, 0xE1	; 225
-  e2:	94 e0       	ldi	r25, 0x04	; 4
-  e4:	21 50       	subi	r18, 0x01	; 1
-  e6:	80 40       	sbci	r24, 0x00	; 0
-  e8:	90 40       	sbci	r25, 0x00	; 0
-  ea:	e1 f7       	brne	.-8      	; 0xe4 <led_test_m_config+0x2c>
-  ec:	00 c0       	rjmp	.+0      	; 0xee <led_test_m_config+0x36>
-  ee:	00 00       	nop
+ 2e4:	d0 ef       	ldi	r29, 0xF0	; 240
+ 2e6:	db bb       	out	0x1b, r29	; 27
+ 2e8:	2f ef       	ldi	r18, 0xFF	; 255
+ 2ea:	81 ee       	ldi	r24, 0xE1	; 225
+ 2ec:	94 e0       	ldi	r25, 0x04	; 4
+ 2ee:	21 50       	subi	r18, 0x01	; 1
+ 2f0:	80 40       	sbci	r24, 0x00	; 0
+ 2f2:	90 40       	sbci	r25, 0x00	; 0
+ 2f4:	e1 f7       	brne	.-8      	; 0x2ee <led_test_m_config+0x2c>
+ 2f6:	00 c0       	rjmp	.+0      	; 0x2f8 <led_test_m_config+0x36>
+ 2f8:	00 00       	nop
 	_delay_ms(200);
 
 	transmit_string_UART0("_b_");
-  f0:	84 e0       	ldi	r24, 0x04	; 4
-  f2:	91 e0       	ldi	r25, 0x01	; 1
-  f4:	7d d0       	rcall	.+250    	; 0x1f0 <transmit_string_UART0>
+ 2fa:	86 e0       	ldi	r24, 0x06	; 6
+ 2fc:	91 e0       	ldi	r25, 0x01	; 1
+ 2fe:	7c d0       	rcall	.+248    	; 0x3f8 <transmit_string_UART0>
 		
 	PORTA = 0x0F;
-  f6:	cb bb       	out	0x1b, r28	; 27
-  f8:	2f ef       	ldi	r18, 0xFF	; 255
-  fa:	81 ee       	ldi	r24, 0xE1	; 225
-  fc:	94 e0       	ldi	r25, 0x04	; 4
-  fe:	21 50       	subi	r18, 0x01	; 1
- 100:	80 40       	sbci	r24, 0x00	; 0
- 102:	90 40       	sbci	r25, 0x00	; 0
- 104:	e1 f7       	brne	.-8      	; 0xfe <led_test_m_config+0x46>
- 106:	00 c0       	rjmp	.+0      	; 0x108 <led_test_m_config+0x50>
- 108:	00 00       	nop
+ 300:	cb bb       	out	0x1b, r28	; 27
+ 302:	2f ef       	ldi	r18, 0xFF	; 255
+ 304:	81 ee       	ldi	r24, 0xE1	; 225
+ 306:	94 e0       	ldi	r25, 0x04	; 4
+ 308:	21 50       	subi	r18, 0x01	; 1
+ 30a:	80 40       	sbci	r24, 0x00	; 0
+ 30c:	90 40       	sbci	r25, 0x00	; 0
+ 30e:	e1 f7       	brne	.-8      	; 0x308 <led_test_m_config+0x46>
+ 310:	00 c0       	rjmp	.+0      	; 0x312 <led_test_m_config+0x50>
+ 312:	00 00       	nop
 	_delay_ms(200);
 	PORTA = 0xF0;
- 10a:	db bb       	out	0x1b, r29	; 27
- 10c:	2f ef       	ldi	r18, 0xFF	; 255
- 10e:	81 ee       	ldi	r24, 0xE1	; 225
- 110:	94 e0       	ldi	r25, 0x04	; 4
- 112:	21 50       	subi	r18, 0x01	; 1
- 114:	80 40       	sbci	r24, 0x00	; 0
- 116:	90 40       	sbci	r25, 0x00	; 0
- 118:	e1 f7       	brne	.-8      	; 0x112 <led_test_m_config+0x5a>
- 11a:	00 c0       	rjmp	.+0      	; 0x11c <led_test_m_config+0x64>
+ 314:	db bb       	out	0x1b, r29	; 27
+ 316:	2f ef       	ldi	r18, 0xFF	; 255
+ 318:	81 ee       	ldi	r24, 0xE1	; 225
+ 31a:	94 e0       	ldi	r25, 0x04	; 4
+ 31c:	21 50       	subi	r18, 0x01	; 1
+ 31e:	80 40       	sbci	r24, 0x00	; 0
+ 320:	90 40       	sbci	r25, 0x00	; 0
+ 322:	e1 f7       	brne	.-8      	; 0x31c <led_test_m_config+0x5a>
+ 324:	00 c0       	rjmp	.+0      	; 0x326 <led_test_m_config+0x64>
 	_delay_ms(200);
 	
 	transmit_string_UART0("_c_");
- 11c:	00 00       	nop
- 11e:	88 e0       	ldi	r24, 0x08	; 8
- 120:	91 e0       	ldi	r25, 0x01	; 1
+ 326:	00 00       	nop
+ 328:	8a e0       	ldi	r24, 0x0A	; 10
+ 32a:	91 e0       	ldi	r25, 0x01	; 1
 	
 	PORTA = 0x0F;
- 122:	66 d0       	rcall	.+204    	; 0x1f0 <transmit_string_UART0>
- 124:	cb bb       	out	0x1b, r28	; 27
- 126:	2f ef       	ldi	r18, 0xFF	; 255
- 128:	81 ee       	ldi	r24, 0xE1	; 225
- 12a:	94 e0       	ldi	r25, 0x04	; 4
- 12c:	21 50       	subi	r18, 0x01	; 1
- 12e:	80 40       	sbci	r24, 0x00	; 0
- 130:	90 40       	sbci	r25, 0x00	; 0
- 132:	e1 f7       	brne	.-8      	; 0x12c <led_test_m_config+0x74>
- 134:	00 c0       	rjmp	.+0      	; 0x136 <led_test_m_config+0x7e>
+ 32c:	65 d0       	rcall	.+202    	; 0x3f8 <transmit_string_UART0>
+ 32e:	cb bb       	out	0x1b, r28	; 27
+ 330:	2f ef       	ldi	r18, 0xFF	; 255
+ 332:	81 ee       	ldi	r24, 0xE1	; 225
+ 334:	94 e0       	ldi	r25, 0x04	; 4
+ 336:	21 50       	subi	r18, 0x01	; 1
+ 338:	80 40       	sbci	r24, 0x00	; 0
+ 33a:	90 40       	sbci	r25, 0x00	; 0
+ 33c:	e1 f7       	brne	.-8      	; 0x336 <led_test_m_config+0x74>
+ 33e:	00 c0       	rjmp	.+0      	; 0x340 <led_test_m_config+0x7e>
 	_delay_ms(200);
 	PORTA = 0xF0;
- 136:	00 00       	nop
- 138:	db bb       	out	0x1b, r29	; 27
- 13a:	2f ef       	ldi	r18, 0xFF	; 255
- 13c:	81 ee       	ldi	r24, 0xE1	; 225
- 13e:	94 e0       	ldi	r25, 0x04	; 4
- 140:	21 50       	subi	r18, 0x01	; 1
- 142:	80 40       	sbci	r24, 0x00	; 0
- 144:	90 40       	sbci	r25, 0x00	; 0
- 146:	e1 f7       	brne	.-8      	; 0x140 <led_test_m_config+0x88>
+ 340:	00 00       	nop
+ 342:	db bb       	out	0x1b, r29	; 27
+ 344:	2f ef       	ldi	r18, 0xFF	; 255
+ 346:	81 ee       	ldi	r24, 0xE1	; 225
+ 348:	94 e0       	ldi	r25, 0x04	; 4
+ 34a:	21 50       	subi	r18, 0x01	; 1
+ 34c:	80 40       	sbci	r24, 0x00	; 0
+ 34e:	90 40       	sbci	r25, 0x00	; 0
+ 350:	e1 f7       	brne	.-8      	; 0x34a <led_test_m_config+0x88>
 	_delay_ms(200);
 	
 	transmit_string_UART0("_d_");
- 148:	00 c0       	rjmp	.+0      	; 0x14a <led_test_m_config+0x92>
- 14a:	00 00       	nop
- 14c:	8c e0       	ldi	r24, 0x0C	; 12
- 14e:	91 e0       	ldi	r25, 0x01	; 1
+ 352:	00 c0       	rjmp	.+0      	; 0x354 <led_test_m_config+0x92>
+ 354:	00 00       	nop
+ 356:	8e e0       	ldi	r24, 0x0E	; 14
+ 358:	91 e0       	ldi	r25, 0x01	; 1
 	
 	PORTA = 0x0F;
- 150:	4f d0       	rcall	.+158    	; 0x1f0 <transmit_string_UART0>
- 152:	cb bb       	out	0x1b, r28	; 27
- 154:	2f ef       	ldi	r18, 0xFF	; 255
- 156:	81 ee       	ldi	r24, 0xE1	; 225
- 158:	94 e0       	ldi	r25, 0x04	; 4
- 15a:	21 50       	subi	r18, 0x01	; 1
- 15c:	80 40       	sbci	r24, 0x00	; 0
- 15e:	90 40       	sbci	r25, 0x00	; 0
- 160:	e1 f7       	brne	.-8      	; 0x15a <led_test_m_config+0xa2>
- 162:	00 c0       	rjmp	.+0      	; 0x164 <led_test_m_config+0xac>
+ 35a:	4e d0       	rcall	.+156    	; 0x3f8 <transmit_string_UART0>
+ 35c:	cb bb       	out	0x1b, r28	; 27
+ 35e:	2f ef       	ldi	r18, 0xFF	; 255
+ 360:	81 ee       	ldi	r24, 0xE1	; 225
+ 362:	94 e0       	ldi	r25, 0x04	; 4
+ 364:	21 50       	subi	r18, 0x01	; 1
+ 366:	80 40       	sbci	r24, 0x00	; 0
+ 368:	90 40       	sbci	r25, 0x00	; 0
+ 36a:	e1 f7       	brne	.-8      	; 0x364 <led_test_m_config+0xa2>
+ 36c:	00 c0       	rjmp	.+0      	; 0x36e <led_test_m_config+0xac>
 	_delay_ms(200);
 	PORTA = 0xF0;
- 164:	00 00       	nop
- 166:	db bb       	out	0x1b, r29	; 27
- 168:	2f ef       	ldi	r18, 0xFF	; 255
- 16a:	81 ee       	ldi	r24, 0xE1	; 225
- 16c:	94 e0       	ldi	r25, 0x04	; 4
- 16e:	21 50       	subi	r18, 0x01	; 1
- 170:	80 40       	sbci	r24, 0x00	; 0
- 172:	90 40       	sbci	r25, 0x00	; 0
- 174:	e1 f7       	brne	.-8      	; 0x16e <led_test_m_config+0xb6>
- 176:	00 c0       	rjmp	.+0      	; 0x178 <led_test_m_config+0xc0>
+ 36e:	00 00       	nop
+ 370:	db bb       	out	0x1b, r29	; 27
+ 372:	2f ef       	ldi	r18, 0xFF	; 255
+ 374:	81 ee       	ldi	r24, 0xE1	; 225
+ 376:	94 e0       	ldi	r25, 0x04	; 4
+ 378:	21 50       	subi	r18, 0x01	; 1
+ 37a:	80 40       	sbci	r24, 0x00	; 0
+ 37c:	90 40       	sbci	r25, 0x00	; 0
+ 37e:	e1 f7       	brne	.-8      	; 0x378 <led_test_m_config+0xb6>
+ 380:	00 c0       	rjmp	.+0      	; 0x382 <led_test_m_config+0xc0>
 	_delay_ms(200);
 	
 	PORTA = 0x00; 
- 178:	00 00       	nop
- 17a:	1b ba       	out	0x1b, r1	; 27
- 17c:	2f ef       	ldi	r18, 0xFF	; 255
- 17e:	81 ee       	ldi	r24, 0xE1	; 225
- 180:	94 e0       	ldi	r25, 0x04	; 4
- 182:	21 50       	subi	r18, 0x01	; 1
- 184:	80 40       	sbci	r24, 0x00	; 0
- 186:	90 40       	sbci	r25, 0x00	; 0
- 188:	e1 f7       	brne	.-8      	; 0x182 <led_test_m_config+0xca>
- 18a:	00 c0       	rjmp	.+0      	; 0x18c <led_test_m_config+0xd4>
+ 382:	00 00       	nop
+ 384:	1b ba       	out	0x1b, r1	; 27
+ 386:	2f ef       	ldi	r18, 0xFF	; 255
+ 388:	81 ee       	ldi	r24, 0xE1	; 225
+ 38a:	94 e0       	ldi	r25, 0x04	; 4
+ 38c:	21 50       	subi	r18, 0x01	; 1
+ 38e:	80 40       	sbci	r24, 0x00	; 0
+ 390:	90 40       	sbci	r25, 0x00	; 0
+ 392:	e1 f7       	brne	.-8      	; 0x38c <led_test_m_config+0xca>
+ 394:	00 c0       	rjmp	.+0      	; 0x396 <led_test_m_config+0xd4>
 	_delay_ms(200);
 	
 }
- 18c:	00 00       	nop
- 18e:	df 91       	pop	r29
- 190:	cf 91       	pop	r28
- 192:	08 95       	ret
+ 396:	00 00       	nop
+ 398:	df 91       	pop	r29
+ 39a:	cf 91       	pop	r28
+ 39c:	08 95       	ret
 
-00000194 <led_test_m_a>:
-
-void led_test_m_a(void)
-{
-	PORTA |= 0b10000000;
- 194:	df 9a       	sbi	0x1b, 7	; 27
-	transmit_string_UART0(" led_a ");
- 196:	80 e1       	ldi	r24, 0x10	; 16
- 198:	91 e0       	ldi	r25, 0x01	; 1
- 19a:	2a d0       	rcall	.+84     	; 0x1f0 <transmit_string_UART0>
- 19c:	2f ef       	ldi	r18, 0xFF	; 255
- 19e:	81 ee       	ldi	r24, 0xE1	; 225
- 1a0:	94 e0       	ldi	r25, 0x04	; 4
- 1a2:	21 50       	subi	r18, 0x01	; 1
- 1a4:	80 40       	sbci	r24, 0x00	; 0
- 1a6:	90 40       	sbci	r25, 0x00	; 0
- 1a8:	e1 f7       	brne	.-8      	; 0x1a2 <led_test_m_a+0xe>
- 1aa:	00 c0       	rjmp	.+0      	; 0x1ac <led_test_m_a+0x18>
- 1ac:	00 00       	nop
-	_delay_ms(200);
-	PORTA &= 0b01111111;
- 1ae:	df 98       	cbi	0x1b, 7	; 27
- 1b0:	2f ef       	ldi	r18, 0xFF	; 255
- 1b2:	81 ee       	ldi	r24, 0xE1	; 225
- 1b4:	94 e0       	ldi	r25, 0x04	; 4
- 1b6:	21 50       	subi	r18, 0x01	; 1
- 1b8:	80 40       	sbci	r24, 0x00	; 0
- 1ba:	90 40       	sbci	r25, 0x00	; 0
- 1bc:	e1 f7       	brne	.-8      	; 0x1b6 <led_test_m_a+0x22>
- 1be:	00 c0       	rjmp	.+0      	; 0x1c0 <led_test_m_a+0x2c>
- 1c0:	00 00       	nop
- 1c2:	08 95       	ret
-
-000001c4 <main>:
+0000039e <main>:
 #include "i2c.h"
 #include "led_tests.h"
-
+#include "gps.h"
 
 int main(void)
 {
- 1c4:	04 d0       	rcall	.+8      	; 0x1ce <init_UART0>
- 1c6:	78 94       	sei
- 1c8:	77 df       	rcall	.-274    	; 0xb8 <led_test_m_config>
- 1ca:	e4 df       	rcall	.-56     	; 0x194 <led_test_m_a>
- 1cc:	fd cf       	rjmp	.-6      	; 0x1c8 <main+0x4>
+ 39e:	17 d0       	rcall	.+46     	; 0x3ce <init_UART0>
+ 3a0:	2f ef       	ldi	r18, 0xFF	; 255
+ 3a2:	83 ed       	ldi	r24, 0xD3	; 211
+ 3a4:	90 e3       	ldi	r25, 0x30	; 48
+ 3a6:	21 50       	subi	r18, 0x01	; 1
+ 3a8:	80 40       	sbci	r24, 0x00	; 0
+ 3aa:	90 40       	sbci	r25, 0x00	; 0
+ 3ac:	e1 f7       	brne	.-8      	; 0x3a6 <main+0x8>
+ 3ae:	00 c0       	rjmp	.+0      	; 0x3b0 <main+0x12>
+ 3b0:	00 00       	nop
+ 3b2:	87 df       	rcall	.-242    	; 0x2c2 <led_test_m_config>
+ 3b4:	2f ef       	ldi	r18, 0xFF	; 255
+ 3b6:	83 ed       	ldi	r24, 0xD3	; 211
+ 3b8:	90 e3       	ldi	r25, 0x30	; 48
+ 3ba:	21 50       	subi	r18, 0x01	; 1
+ 3bc:	80 40       	sbci	r24, 0x00	; 0
+ 3be:	90 40       	sbci	r25, 0x00	; 0
+ 3c0:	e1 f7       	brne	.-8      	; 0x3ba <main+0x1c>
+ 3c2:	00 c0       	rjmp	.+0      	; 0x3c4 <main+0x26>
+ 3c4:	00 00       	nop
+ 3c6:	7d df       	rcall	.-262    	; 0x2c2 <led_test_m_config>
+ 3c8:	78 94       	sei
+ 3ca:	19 df       	rcall	.-462    	; 0x1fe <message_ID>
+ 3cc:	fe cf       	rjmp	.-4      	; 0x3ca <main+0x2c>
 
-000001ce <init_UART0>:
+000003ce <init_UART0>:
     	while ( !(UCSR1A & (_BV(UDRE1))) );
     	///* Start transmission
     	UDR1 = buffer[i];
 		i++;	
 	}
 }
- 1ce:	1b b8       	out	0x0b, r1	; 11
- 1d0:	1a b8       	out	0x0a, r1	; 10
- 1d2:	e5 e9       	ldi	r30, 0x95	; 149
- 1d4:	f0 e0       	ldi	r31, 0x00	; 0
- 1d6:	10 82       	st	Z, r1
- 1d8:	59 9a       	sbi	0x0b, 1	; 11
- 1da:	8a b1       	in	r24, 0x0a	; 10
- 1dc:	88 61       	ori	r24, 0x18	; 24
- 1de:	8a b9       	out	0x0a, r24	; 10
- 1e0:	80 81       	ld	r24, Z
- 1e2:	8e 60       	ori	r24, 0x0E	; 14
- 1e4:	80 83       	st	Z, r24
- 1e6:	87 e6       	ldi	r24, 0x67	; 103
- 1e8:	89 b9       	out	0x09, r24	; 9
- 1ea:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
- 1ee:	08 95       	ret
+ 3ce:	1b b8       	out	0x0b, r1	; 11
+ 3d0:	1a b8       	out	0x0a, r1	; 10
+ 3d2:	e5 e9       	ldi	r30, 0x95	; 149
+ 3d4:	f0 e0       	ldi	r31, 0x00	; 0
+ 3d6:	10 82       	st	Z, r1
+ 3d8:	59 9a       	sbi	0x0b, 1	; 11
+ 3da:	8a b1       	in	r24, 0x0a	; 10
+ 3dc:	88 69       	ori	r24, 0x98	; 152
+ 3de:	8a b9       	out	0x0a, r24	; 10
+ 3e0:	80 81       	ld	r24, Z
+ 3e2:	8e 60       	ori	r24, 0x0E	; 14
+ 3e4:	80 83       	st	Z, r24
+ 3e6:	87 e6       	ldi	r24, 0x67	; 103
+ 3e8:	89 b9       	out	0x09, r24	; 9
+ 3ea:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
+ 3ee:	08 95       	ret
 
-000001f0 <transmit_string_UART0>:
+000003f0 <receive_UART0>:
+ 3f0:	5f 9b       	sbis	0x0b, 7	; 11
+ 3f2:	fe cf       	rjmp	.-4      	; 0x3f0 <receive_UART0>
+ 3f4:	8c b1       	in	r24, 0x0c	; 12
+ 3f6:	08 95       	ret
+
+000003f8 <transmit_string_UART0>:
 
 
 void transmit_string_UART0(char *buffer)
 {
- 1f0:	fc 01       	movw	r30, r24
+ 3f8:	fc 01       	movw	r30, r24
   	uint16_t i = 0;
   	///Loop through the data
   	while(buffer[i] != '\0')
- 1f2:	90 81       	ld	r25, Z
- 1f4:	99 23       	and	r25, r25
- 1f6:	39 f0       	breq	.+14     	; 0x206 <transmit_string_UART0+0x16>
- 1f8:	31 96       	adiw	r30, 0x01	; 1
+ 3fa:	90 81       	ld	r25, Z
+ 3fc:	99 23       	and	r25, r25
+ 3fe:	39 f0       	breq	.+14     	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+ 400:	31 96       	adiw	r30, 0x01	; 1
   	{
     	///* Wait for empty transmit buffer 
     	while ( !(UCSR0A & (_BV(UDRE0))) );
- 1fa:	5d 9b       	sbis	0x0b, 5	; 11
- 1fc:	fe cf       	rjmp	.-4      	; 0x1fa <transmit_string_UART0+0xa>
+ 402:	5d 9b       	sbis	0x0b, 5	; 11
+ 404:	fe cf       	rjmp	.-4      	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
     	///* Start transmission
     	UDR0 = buffer[i];
- 1fe:	9c b9       	out	0x0c, r25	; 12
+ 406:	9c b9       	out	0x0c, r25	; 12
 
 void transmit_string_UART0(char *buffer)
 {
   	uint16_t i = 0;
   	///Loop through the data
   	while(buffer[i] != '\0')
- 200:	91 91       	ld	r25, Z+
- 202:	91 11       	cpse	r25, r1
- 204:	fa cf       	rjmp	.-12     	; 0x1fa <transmit_string_UART0+0xa>
- 206:	08 95       	ret
+ 408:	91 91       	ld	r25, Z+
+ 40a:	91 11       	cpse	r25, r1
+ 40c:	fa cf       	rjmp	.-12     	; 0x402 <__LOCK_REGION_LENGTH__+0x2>
+ 40e:	08 95       	ret
 
-00000208 <_exit>:
- 208:	f8 94       	cli
+00000410 <_exit>:
+ 410:	f8 94       	cli
 
-0000020a <__stop_program>:
- 20a:	ff cf       	rjmp	.-2      	; 0x20a <__stop_program>
+00000412 <__stop_program>:
+ 412:	ff cf       	rjmp	.-2      	; 0x412 <__stop_program>

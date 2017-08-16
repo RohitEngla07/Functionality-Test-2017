@@ -14,19 +14,22 @@
 #include "spi.h"
 #include "i2c.h"
 #include "led_tests.h"
-
+#include "gps.h"
 
 int main(void)
 {
 	//Initializations 
 	init_UART0();
-	
+	for(int xx = 0;xx<2;xx++)
+	{
+	_delay_ms(2000);
+	led_test_m_config();
+	}
 	//Interrupt
-	sei();
-		
+	sei();//global interrupt enable
     while (1) 
     {
-		
+		message_ID();//commented while using interuppt
     }
 }
 
