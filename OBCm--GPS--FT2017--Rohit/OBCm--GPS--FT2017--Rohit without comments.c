@@ -21,7 +21,7 @@ uint8_t HDOP[2];
 uint8_t PDOP[2];
 uint8_t GPS_second[4];
 uint8_t message[2000];
-int i=0;
+int i;
 
 ISR(USART0_RX_vect)
 {
@@ -29,21 +29,18 @@ ISR(USART0_RX_vect)
 	i=i+1;
 	if(i>=22)
 	{
-		cli();
 		if(message[0]==0x3F && message[1]==0x3F)
 		{
 			message_ID();
 		}
 		else
 		{
-			for(int shift=0; shift<(i-1) ;shift++)
+			for(int shift=0; shift<=i ;shift++)
 			{
 				message[shift]=message[shift+1];
 			}
-			i=i-1;
 		}
 	}
-	sei();
 }
 
 void message_ID()
@@ -64,21 +61,17 @@ void message_ID()
 	{
 		transmit_string_UART0("time");
 		get_time();
-		i=9;
+		i=10;
 	}
 	else if(message[2]==0x0B && message[3]== 0xAC)
 	{
 		transmit_string_UART0("DOP");
 		get_DOP();
-		i=8;
+		i=9;
 	}
 	else
 	{
-		for(int shift=0; shift<(i-1) ;shift++)
-		{
-			message[shift]=message[shift+1];
-		}
-		i=i-1;
+		i=0;
 	}
 }
 
@@ -106,8 +99,8 @@ void get_position()
 }
 
 void get_velocity()
-{
-	
+{	
+
 	for(int v=0;v<4;v++)
 	{
 		velocity_x[v]=message[v+4];
@@ -133,8 +126,8 @@ void get_time()
 
 	for(int t=0;t<3;t++)
 	{
-		TIME[t]=message[t+4];
-		transmit_UART0(TIME[t]);
+		TIME[i]=message[t+4];
+		transmit_UART0(TIME[i]);
 	}
 
 	for(int t=0;t<4;t++)
@@ -170,10 +163,8 @@ void get_DOP()
 		transmit_UART0(GPS_second[d]);
 	}
 	
-	for(int d=0;d<8;d++)
+	for(int t=0;t<8;t++)
 	{
-		message[d] = message[d+14];
+		message[t] = message[t+14];
 	}
 }
-
-

@@ -3,7 +3,7 @@ Archive member included to satisfy reference by file (symbol)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega128a/avr51/crtatmega128a.o (exit)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
-                              gps.o (__do_copy_data)
+                              led_tests.o (__do_copy_data)
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
                               gps.o (__do_clear_bss)
 
@@ -14,7 +14,7 @@ TIME                0x3               gps.o
 position_z          0x4               gps.o
 position_x          0x4               gps.o
 velocity_y          0x4               gps.o
-message             0x4               gps.o
+message             0x7d0             gps.o
 Date                0x4               gps.o
 GPS_second          0x4               gps.o
 position_y          0x4               gps.o
@@ -30,8 +30,13 @@ Discarded input sections
  .text          0x00000000        0x0 gps.o
  .data          0x00000000        0x0 gps.o
  .bss           0x00000000        0x0 gps.o
- .text.print_data
-                0x00000000       0xc2 gps.o
+ .text.get_position
+                0x00000000       0x8c gps.o
+ .text.get_velocity
+                0x00000000       0x8c gps.o
+ .text.get_time
+                0x00000000       0x78 gps.o
+ .text.get_DOP  0x00000000       0x8c gps.o
  .text          0x00000000        0x0 i2c.o
  .data          0x00000000        0x0 i2c.o
  .bss           0x00000000        0x0 i2c.o
@@ -64,6 +69,10 @@ Discarded input sections
  .text          0x00000000        0x0 led_tests.o
  .data          0x00000000        0x0 led_tests.o
  .bss           0x00000000        0x0 led_tests.o
+ .rodata.str1.1
+                0x00000000       0x30 led_tests.o
+ .text.led_test_m_config
+                0x00000000       0xe4 led_tests.o
  .text.led_test_m_a
                 0x00000000       0x32 led_tests.o
  .text.led_test_m_b
@@ -72,6 +81,16 @@ Discarded input sections
                 0x00000000       0x32 led_tests.o
  .text.led_test_m_d
                 0x00000000       0x32 led_tests.o
+ .debug_info    0x00000000      0x5e1 led_tests.o
+ .debug_abbrev  0x00000000      0x10b led_tests.o
+ .debug_loc     0x00000000      0x4f7 led_tests.o
+ .debug_aranges
+                0x00000000       0x40 led_tests.o
+ .debug_ranges  0x00000000       0x30 led_tests.o
+ .debug_line    0x00000000      0x2b4 led_tests.o
+ .debug_str     0x00000000      0x24f led_tests.o
+ .comment       0x00000000       0x31 led_tests.o
+ .debug_frame   0x00000000       0x70 led_tests.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -128,6 +147,8 @@ Discarded input sections
                 0x00000000        0x8 uart.o
  .text.receive_UART1
                 0x00000000       0x10 uart.o
+ .text.receive_UART0
+                0x00000000        0x8 uart.o
  .text.transmit_string_UART1
                 0x00000000       0x2c uart.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
@@ -309,7 +330,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x414
+.text           0x00000000      0x1bc
  *(.vectors)
  .vectors       0x00000000       0x8c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega128a/avr51/crtatmega128a.o
                 0x00000000                __vector_default
@@ -404,42 +425,25 @@ END GROUP
                 0x000000c6                __vector_20
                 0x000000c8                . = ALIGN (0x2)
  *(.text.*)
- .text.get_position
-                0x000000c8       0x54 gps.o
-                0x000000c8                get_position
- .text.get_velocity
-                0x0000011c       0x54 gps.o
-                0x0000011c                get_velocity
- .text.get_time
-                0x00000170       0x3e gps.o
-                0x00000170                get_time
- .text.get_DOP  0x000001ae       0x50 gps.o
-                0x000001ae                get_DOP
  .text.message_ID
-                0x000001fe       0x4a gps.o
-                0x000001fe                message_ID
+                0x000000c8       0x2e gps.o
+                0x000000c8                message_ID
  .text.__vector_18
-                0x00000248       0x7a gps.o
-                0x00000248                __vector_18
- .text.led_test_m_config
-                0x000002c2       0xdc led_tests.o
-                0x000002c2                led_test_m_config
- .text.main     0x0000039e       0x30 main.o
-                0x0000039e                main
+                0x000000f6       0x82 gps.o
+                0x000000f6                __vector_18
+ .text.main     0x00000178        0x6 main.o
+                0x00000178                main
  .text.init_UART0
-                0x000003ce       0x22 uart.o
-                0x000003ce                init_UART0
- .text.receive_UART0
-                0x000003f0        0x8 uart.o
-                0x000003f0                receive_UART0
+                0x0000017e       0x22 uart.o
+                0x0000017e                init_UART0
  .text.transmit_string_UART0
-                0x000003f8       0x18 uart.o
-                0x000003f8                transmit_string_UART0
-                0x00000410                . = ALIGN (0x2)
+                0x000001a0       0x18 uart.o
+                0x000001a0                transmit_string_UART0
+                0x000001b8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000410        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
-                0x00000410                _exit
-                0x00000410                exit
+ .fini9         0x000001b8        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x000001b8                _exit
+                0x000001b8                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -458,52 +462,50 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000410        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .fini0         0x000001b8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000414                _etext = .
+                0x000001bc                _etext = .
 
-.data           0x00800100       0x32 load address 0x00000414
+.data           0x00800100        0x0 load address 0x000001bc
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.i        0x00800100        0x2 gps.o
-                0x00800100                i
  *(.rodata)
  *(.rodata*)
- .rodata.str1.1
-                0x00800102       0x30 led_tests.o
  *(.gnu.linkonce.d*)
-                0x00800132                . = ALIGN (0x2)
-                0x00800132                _edata = .
-                0x00800132                PROVIDE (__data_end, .)
+                0x00800100                . = ALIGN (0x2)
+                0x00800100                _edata = .
+                0x00800100                PROVIDE (__data_end, .)
 
-.bss            0x00800132       0x2b
-                0x00800132                PROVIDE (__bss_start, .)
+.bss            0x00800100      0x7f9
+                0x00800100                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.i         0x00800100        0x2 gps.o
+                0x00800100                i
  *(COMMON)
- COMMON         0x00800132       0x2b gps.o
-                0x00800132                TIME
-                0x00800135                position_z
-                0x00800139                position_x
-                0x0080013d                velocity_y
-                0x00800141                message
-                0x00800145                Date
-                0x00800149                GPS_second
-                0x0080014d                position_y
-                0x00800151                velocity_z
-                0x00800155                PDOP
-                0x00800157                HDOP
-                0x00800159                velocity_x
-                0x0080015d                PROVIDE (__bss_end, .)
-                0x00000414                __data_load_start = LOADADDR (.data)
-                0x00000446                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800102      0x7f7 gps.o
+                0x00800102                TIME
+                0x00800105                position_z
+                0x00800109                position_x
+                0x0080010d                velocity_y
+                0x00800111                message
+                0x008008e1                Date
+                0x008008e5                GPS_second
+                0x008008e9                position_y
+                0x008008ed                velocity_z
+                0x008008f1                PDOP
+                0x008008f3                HDOP
+                0x008008f5                velocity_x
+                0x008008f9                PROVIDE (__bss_end, .)
+                0x000001bc                __data_load_start = LOADADDR (.data)
+                0x000001bc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080015d        0x0
+.noinit         0x008008f9        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080015d                _end = .
+                0x008008f9                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -547,7 +549,6 @@ END GROUP
  *(.comment)
  .comment       0x00000000       0x30 gps.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 led_tests.o
  .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 uart.o
 
@@ -571,69 +572,59 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x108
+.debug_aranges  0x00000000       0xc0
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x50 gps.o
+                0x00000000       0x48 gps.o
  .debug_aranges
-                0x00000050       0x40 led_tests.o
+                0x00000048       0x20 main.o
  .debug_aranges
-                0x00000090       0x20 main.o
- .debug_aranges
-                0x000000b0       0x58 uart.o
+                0x00000068       0x58 uart.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1822
+.debug_info     0x00000000      0xe3a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_info    0x00000780      0x7b3 gps.o
- .debug_info    0x00000f33      0x5e1 led_tests.o
- .debug_info    0x00001514      0x169 main.o
- .debug_info    0x0000167d      0x1a5 uart.o
+ .debug_info    0x00000780      0x47d gps.o
+ .debug_info    0x00000bfd       0x98 main.o
+ .debug_info    0x00000c95      0x1a5 uart.o
 
-.debug_abbrev   0x00000000      0xb29
+.debug_abbrev   0x00000000      0x96d
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_abbrev  0x00000718      0x11b gps.o
- .debug_abbrev  0x00000833      0x10b led_tests.o
- .debug_abbrev  0x0000093e       0xf5 main.o
- .debug_abbrev  0x00000a33       0xf6 uart.o
+ .debug_abbrev  0x00000718       0xf7 gps.o
+ .debug_abbrev  0x0000080f       0x68 main.o
+ .debug_abbrev  0x00000877       0xf6 uart.o
 
-.debug_line     0x00000000      0xa9b
+.debug_line     0x00000000      0x6b5
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x169 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_line    0x00000169      0x306 gps.o
- .debug_line    0x0000046f      0x2b4 led_tests.o
- .debug_line    0x00000723      0x15d main.o
- .debug_line    0x00000880      0x21b uart.o
+ .debug_line    0x00000169      0x2e2 gps.o
+ .debug_line    0x0000044b       0x4f main.o
+ .debug_line    0x0000049a      0x21b uart.o
 
-.debug_frame    0x00000000      0x25c
+.debug_frame    0x00000000      0x228
  *(.debug_frame)
- .debug_frame   0x00000000      0x11c gps.o
- .debug_frame   0x0000011c       0x70 led_tests.o
- .debug_frame   0x0000018c       0x24 main.o
- .debug_frame   0x000001b0       0xac uart.o
+ .debug_frame   0x00000000      0x158 gps.o
+ .debug_frame   0x00000158       0x24 main.o
+ .debug_frame   0x0000017c       0xac uart.o
 
-.debug_str      0x00000000      0x5f5
+.debug_str      0x00000000      0x54d
  *(.debug_str)
  .debug_str     0x00000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega128a/avr51/crtatmega128a.o
- .debug_str     0x0000027d      0x251 gps.o
-                                0x285 (size before relaxing)
- .debug_str     0x000004ce       0xa2 led_tests.o
-                                0x24f (size before relaxing)
- .debug_str     0x00000570       0x1c main.o
-                                0x213 (size before relaxing)
- .debug_str     0x0000058c       0x69 uart.o
+ .debug_str     0x0000027d      0x247 gps.o
+                                0x280 (size before relaxing)
+ .debug_str     0x000004c4       0x1c main.o
+                                0x1ab (size before relaxing)
+ .debug_str     0x000004e0       0x6d uart.o
                                 0x239 (size before relaxing)
 
-.debug_loc      0x00000000      0xcb8
+.debug_loc      0x00000000      0x693
  *(.debug_loc)
- .debug_loc     0x00000000      0x655 gps.o
- .debug_loc     0x00000655      0x4f7 led_tests.o
- .debug_loc     0x00000b4c       0xa4 main.o
- .debug_loc     0x00000bf0       0xc8 uart.o
+ .debug_loc     0x00000000      0x5cb gps.o
+ .debug_loc     0x000005cb       0xc8 uart.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -653,12 +644,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0xe0
+.debug_ranges   0x00000000       0x90
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x40 gps.o
- .debug_ranges  0x00000040       0x30 led_tests.o
- .debug_ranges  0x00000070       0x28 main.o
- .debug_ranges  0x00000098       0x48 uart.o
+ .debug_ranges  0x00000000       0x38 gps.o
+ .debug_ranges  0x00000038       0x10 main.o
+ .debug_ranges  0x00000048       0x48 uart.o
 
 .debug_macro
  *(.debug_macro)

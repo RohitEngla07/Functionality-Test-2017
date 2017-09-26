@@ -20,7 +20,7 @@ void init_UART0(void )
   ///Double Baud Rate
   UCSR0A |= _BV(U2X0);
   ///Enable Reception
-  UCSR0B |= _BV(RXEN0) | _BV(TXEN0)|_BV(RXCIE0);
+  UCSR0B |= _BV(RXEN0) | _BV(TXEN0)| (1<<RXCIE0);
   ///8-bit Data Byte, 2 Stop bits
   UCSR0C |= _BV(USBS0) | _BV(UCSZ01) | _BV(UCSZ00);
   ///Set Baud Rate to 9600
