@@ -3,31 +3,31 @@ OBCm--GPS--FT2017--Rohit.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  00000230  2**0
+  0 .data         00000006  00800100  00000454  000004e8  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         000001bc  00000000  00000000  00000074  2**1
+  1 .text         00000454  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          000007f9  00800100  00800100  00000230  2**0
+  2 .bss          00000008  00800106  00800106  000004ee  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  00000230  2**0
+  3 .comment      00000030  00000000  00000000  000004ee  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000260  2**2
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000520  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 000000c0  00000000  00000000  000002a0  2**0
+  5 .debug_aranges 000000a8  00000000  00000000  00000560  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   00000e3a  00000000  00000000  00000360  2**0
+  6 .debug_info   00000e76  00000000  00000000  00000608  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 0000096d  00000000  00000000  0000119a  2**0
+  7 .debug_abbrev 000009b6  00000000  00000000  0000147e  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000006b5  00000000  00000000  00001b07  2**0
+  8 .debug_line   00000722  00000000  00000000  00001e34  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000228  00000000  00000000  000021bc  2**2
+  9 .debug_frame  0000015c  00000000  00000000  00002558  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000054d  00000000  00000000  000023e4  2**0
+ 10 .debug_str    0000058d  00000000  00000000  000026b4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000693  00000000  00000000  00002931  2**0
+ 11 .debug_loc    00000215  00000000  00000000  00002c41  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000090  00000000  00000000  00002fc4  2**0
+ 12 .debug_ranges 00000078  00000000  00000000  00002e56  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -69,7 +69,7 @@ Disassembly of section .text:
   42:	00 00       	nop
   44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
   46:	00 00       	nop
-  48:	56 c0       	rjmp	.+172    	; 0xf6 <__vector_18>
+  48:	3f c0       	rjmp	.+126    	; 0xc8 <__vector_18>
   4a:	00 00       	nop
   4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
   4e:	00 00       	nop
@@ -116,20 +116,20 @@ Disassembly of section .text:
   98:	11 e0       	ldi	r17, 0x01	; 1
   9a:	a0 e0       	ldi	r26, 0x00	; 0
   9c:	b1 e0       	ldi	r27, 0x01	; 1
-  9e:	ec eb       	ldi	r30, 0xBC	; 188
-  a0:	f1 e0       	ldi	r31, 0x01	; 1
+  9e:	e4 e5       	ldi	r30, 0x54	; 84
+  a0:	f4 e0       	ldi	r31, 0x04	; 4
   a2:	00 e0       	ldi	r16, 0x00	; 0
   a4:	0b bf       	out	0x3b, r16	; 59
   a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
   a8:	07 90       	elpm	r0, Z+
   aa:	0d 92       	st	X+, r0
-  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ac:	a6 30       	cpi	r26, 0x06	; 6
   ae:	b1 07       	cpc	r27, r17
   b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
 
 000000b2 <__do_clear_bss>:
-  b2:	28 e0       	ldi	r18, 0x08	; 8
-  b4:	a0 e0       	ldi	r26, 0x00	; 0
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	a6 e0       	ldi	r26, 0x06	; 6
   b6:	b1 e0       	ldi	r27, 0x01	; 1
   b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
 
@@ -137,216 +137,657 @@ Disassembly of section .text:
   ba:	1d 92       	st	X+, r1
 
 000000bc <.do_clear_bss_start>:
-  bc:	a9 3f       	cpi	r26, 0xF9	; 249
+  bc:	ae 30       	cpi	r26, 0x0E	; 14
   be:	b2 07       	cpc	r27, r18
   c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
-  c2:	5a d0       	rcall	.+180    	; 0x178 <main>
-  c4:	79 c0       	rjmp	.+242    	; 0x1b8 <_exit>
+  c2:	ae d1       	rcall	.+860    	; 0x420 <main>
+  c4:	c5 c1       	rjmp	.+906    	; 0x450 <_exit>
 
 000000c6 <__bad_interrupt>:
   c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
 
-000000c8 <message_ID>:
-	}
-	sei();
-}
-
-void message_ID()
+000000c8 <__vector_18>:
 {
-  c8:	0f 93       	push	r16
-  ca:	1f 93       	push	r17
-  cc:	cf 93       	push	r28
-  ce:	df 93       	push	r29
-  d0:	c1 e1       	ldi	r28, 0x11	; 17
-  d2:	d1 e0       	ldi	r29, 0x01	; 1
-  d4:	07 e2       	ldi	r16, 0x27	; 39
-  d6:	11 e0       	ldi	r17, 0x01	; 1
-	for(int x=0;x<22;x++)
-	{
-		char a=(message[x]);
-  d8:	89 91       	ld	r24, Y+
-		transmit_string_UART0(a);
-  da:	90 e0       	ldi	r25, 0x00	; 0
-  dc:	61 d0       	rcall	.+194    	; 0x1a0 <transmit_string_UART0>
-	sei();
+	flag_gps = 1;
 }
-
-void message_ID()
-{
-	for(int x=0;x<22;x++)
-  de:	c0 17       	cp	r28, r16
-  e0:	d1 07       	cpc	r29, r17
-  e2:	d1 f7       	brne	.-12     	; 0xd8 <message_ID+0x10>
-	{
-		char a=(message[x]);
-		transmit_string_UART0(a);
-	}
-	i=0;
-  e4:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__data_end+0x1>
-  e8:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_end>
-		//{
-			//message[shift]=message[shift+1];
-		//}
-		//i=i-1;
-	//}
-}
-  ec:	df 91       	pop	r29
-  ee:	cf 91       	pop	r28
-  f0:	1f 91       	pop	r17
-  f2:	0f 91       	pop	r16
-  f4:	08 95       	ret
-
-000000f6 <__vector_18>:
-uint8_t GPS_second[4];
-uint8_t message[2000];
-int i=0;
 
 ISR(USART0_RX_vect)
 {
-  f6:	1f 92       	push	r1
-  f8:	0f 92       	push	r0
-  fa:	0f b6       	in	r0, 0x3f	; 63
-  fc:	0f 92       	push	r0
-  fe:	11 24       	eor	r1, r1
- 100:	0b b6       	in	r0, 0x3b	; 59
- 102:	0f 92       	push	r0
- 104:	2f 93       	push	r18
- 106:	3f 93       	push	r19
- 108:	4f 93       	push	r20
- 10a:	5f 93       	push	r21
- 10c:	6f 93       	push	r22
- 10e:	7f 93       	push	r23
- 110:	8f 93       	push	r24
- 112:	9f 93       	push	r25
- 114:	af 93       	push	r26
- 116:	bf 93       	push	r27
- 118:	ef 93       	push	r30
- 11a:	ff 93       	push	r31
-	message[i]=UDR0;
- 11c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_end>
- 120:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_end+0x1>
- 124:	2c b1       	in	r18, 0x0c	; 12
- 126:	fc 01       	movw	r30, r24
- 128:	ef 5e       	subi	r30, 0xEF	; 239
- 12a:	fe 4f       	sbci	r31, 0xFE	; 254
- 12c:	20 83       	st	Z, r18
-	i=i+1;
- 12e:	01 96       	adiw	r24, 0x01	; 1
- 130:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_end+0x1>
- 134:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_end>
-	if(i>=22)
- 138:	46 97       	sbiw	r24, 0x16	; 22
- 13a:	54 f0       	brlt	.+20     	; 0x150 <__vector_18+0x5a>
-	{
-		cli();
- 13c:	f8 94       	cli
-		if(message[0]==0x3F && message[1]==0x3F)
- 13e:	80 91 11 01 	lds	r24, 0x0111	; 0x800111 <message>
- 142:	8f 33       	cpi	r24, 0x3F	; 63
- 144:	29 f4       	brne	.+10     	; 0x150 <__vector_18+0x5a>
- 146:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <message+0x1>
- 14a:	8f 33       	cpi	r24, 0x3F	; 63
-		{
-			message_ID();
- 14c:	09 f4       	brne	.+2      	; 0x150 <__vector_18+0x5a>
-				//message[shift]=message[shift+1];
-			//}
-			//i=i-1;
-		//}
-	}
-	sei();
- 14e:	bc df       	rcall	.-136    	; 0xc8 <message_ID>
+  c8:	1f 92       	push	r1
+  ca:	0f 92       	push	r0
+  cc:	0f b6       	in	r0, 0x3f	; 63
+  ce:	0f 92       	push	r0
+  d0:	11 24       	eor	r1, r1
+  d2:	0b b6       	in	r0, 0x3b	; 59
+  d4:	0f 92       	push	r0
+  d6:	2f 93       	push	r18
+  d8:	3f 93       	push	r19
+  da:	4f 93       	push	r20
+  dc:	5f 93       	push	r21
+  de:	6f 93       	push	r22
+  e0:	7f 93       	push	r23
+  e2:	8f 93       	push	r24
+  e4:	9f 93       	push	r25
+  e6:	af 93       	push	r26
+  e8:	bf 93       	push	r27
+  ea:	ef 93       	push	r30
+  ec:	ff 93       	push	r31
+	uint8_t recv = UDR0;
+  ee:	8c b1       	in	r24, 0x0c	; 12
+	if(recv =='g') poll_function();
+  f0:	87 36       	cpi	r24, 0x67	; 103
+  f2:	39 f4       	brne	.+14     	; 0x102 <__vector_18+0x3a>
+	pdop=1;
 }
- 150:	78 94       	sei
- 152:	ff 91       	pop	r31
- 154:	ef 91       	pop	r30
- 156:	bf 91       	pop	r27
- 158:	af 91       	pop	r26
- 15a:	9f 91       	pop	r25
- 15c:	8f 91       	pop	r24
- 15e:	7f 91       	pop	r23
- 160:	6f 91       	pop	r22
- 162:	5f 91       	pop	r21
- 164:	4f 91       	pop	r20
- 166:	3f 91       	pop	r19
- 168:	2f 91       	pop	r18
- 16a:	0f 90       	pop	r0
- 16c:	0b be       	out	0x3b, r0	; 59
- 16e:	0f 90       	pop	r0
- 170:	0f be       	out	0x3f, r0	; 63
- 172:	0f 90       	pop	r0
- 174:	1f 90       	pop	r1
- 176:	18 95       	reti
 
-00000178 <main>:
+void poll_function()
+{
+	flag_gps = 1;
+  f4:	81 e0       	ldi	r24, 0x01	; 1
+  f6:	90 e0       	ldi	r25, 0x00	; 0
+  f8:	90 93 0d 01 	sts	0x010D, r25	; 0x80010d <flag_gps+0x1>
+  fc:	80 93 0c 01 	sts	0x010C, r24	; 0x80010c <flag_gps>
+ 100:	07 c0       	rjmp	.+14     	; 0x110 <__vector_18+0x48>
+
+ISR(USART0_RX_vect)
+{
+	uint8_t recv = UDR0;
+	if(recv =='g') poll_function();
+	if(flag_gps == 1)
+ 102:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <flag_gps>
+ 106:	90 91 0d 01 	lds	r25, 0x010D	; 0x80010d <flag_gps+0x1>
+ 10a:	01 97       	sbiw	r24, 0x01	; 1
+ 10c:	09 f0       	breq	.+2      	; 0x110 <__vector_18+0x48>
+ 10e:	75 c1       	rjmp	.+746    	; 0x3fa <__vector_18+0x332>
+	//cli();
+	//message[i]=UDR0;
+	//i=i+1;
+	//ISR(USART0_RX_vect)
+
+  PORTA ^= 0xf0;
+ 110:	9b b3       	in	r25, 0x1b	; 27
+ 112:	80 ef       	ldi	r24, 0xF0	; 240
+ 114:	89 27       	eor	r24, r25
+ 116:	8b bb       	out	0x1b, r24	; 27
+  
+  ///Buffer the Received Byte
+  last_byte = UDR0;
+ 118:	8c b1       	in	r24, 0x0c	; 12
+ 11a:	80 93 07 01 	sts	0x0107, r24	; 0x800107 <last_byte>
+  
+  
+  ///Put the received byte in the last 4-bytes buffer
+  buffer = buffer << 8;
+ 11e:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 122:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 126:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 12a:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 12e:	ba 2f       	mov	r27, r26
+ 130:	a9 2f       	mov	r26, r25
+ 132:	98 2f       	mov	r25, r24
+ 134:	88 27       	eor	r24, r24
+ 136:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <buffer>
+ 13a:	90 93 09 01 	sts	0x0109, r25	; 0x800109 <buffer+0x1>
+ 13e:	a0 93 0a 01 	sts	0x010A, r26	; 0x80010a <buffer+0x2>
+ 142:	b0 93 0b 01 	sts	0x010B, r27	; 0x80010b <buffer+0x3>
+  buffer &= 0xFFFFFF00;
+ 146:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 14a:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 14e:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 152:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 156:	88 27       	eor	r24, r24
+ 158:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <buffer>
+ 15c:	90 93 09 01 	sts	0x0109, r25	; 0x800109 <buffer+0x1>
+ 160:	a0 93 0a 01 	sts	0x010A, r26	; 0x80010a <buffer+0x2>
+ 164:	b0 93 0b 01 	sts	0x010B, r27	; 0x80010b <buffer+0x3>
+  buffer |= (uint32_t) last_byte;
+ 168:	20 91 07 01 	lds	r18, 0x0107	; 0x800107 <last_byte>
+ 16c:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 170:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 174:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 178:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 17c:	82 2b       	or	r24, r18
+ 17e:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <buffer>
+ 182:	90 93 09 01 	sts	0x0109, r25	; 0x800109 <buffer+0x1>
+ 186:	a0 93 0a 01 	sts	0x010A, r26	; 0x80010a <buffer+0x2>
+ 18a:	b0 93 0b 01 	sts	0x010B, r27	; 0x80010b <buffer+0x3>
+  
+   ///Check the buffer against message ID's
+   ///Position
+   if(buffer == 0x3F3F04AC)
+ 18e:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 192:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 196:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 19a:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 19e:	8c 3a       	cpi	r24, 0xAC	; 172
+ 1a0:	94 40       	sbci	r25, 0x04	; 4
+ 1a2:	af 43       	sbci	r26, 0x3F	; 63
+ 1a4:	bf 43       	sbci	r27, 0x3F	; 63
+ 1a6:	39 f4       	brne	.+14     	; 0x1b6 <__vector_18+0xee>
+   {
+	   uint8_t messagep;
+	   messagep = 0x04;
+	   transmit_UART0(messagep);
+ 1a8:	84 e0       	ldi	r24, 0x04	; 4
+ 1aa:	4e d1       	rcall	.+668    	; 0x448 <transmit_UART0>
+	   message_end = 0;
+ 1ac:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <__data_end>
+	   pos = 0;
+ 1b0:	10 92 04 01 	sts	0x0104, r1	; 0x800104 <pos>
+ 1b4:	47 c0       	rjmp	.+142    	; 0x244 <__vector_18+0x17c>
+   }
+   ///Velocity
+   else if(buffer == 0x3F3F05AC)
+ 1b6:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 1ba:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 1be:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 1c2:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 1c6:	8c 3a       	cpi	r24, 0xAC	; 172
+ 1c8:	95 40       	sbci	r25, 0x05	; 5
+ 1ca:	af 43       	sbci	r26, 0x3F	; 63
+ 1cc:	bf 43       	sbci	r27, 0x3F	; 63
+   {
+	   uint8_t messagev;
+	   messagev = 0x05;
+	   transmit_UART0(messagev);
+ 1ce:	29 f4       	brne	.+10     	; 0x1da <__vector_18+0x112>
+ 1d0:	85 e0       	ldi	r24, 0x05	; 5
+	  // transmit_string_UART0(buffer);
+	   vel = 0;
+ 1d2:	3a d1       	rcall	.+628    	; 0x448 <transmit_UART0>
+ 1d4:	10 92 03 01 	sts	0x0103, r1	; 0x800103 <vel>
+   }
+   ///DOP
+   else if(buffer == 0x3F3F0BAC)
+ 1d8:	35 c0       	rjmp	.+106    	; 0x244 <__vector_18+0x17c>
+ 1da:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 1de:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 1e2:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 1e6:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 1ea:	8c 3a       	cpi	r24, 0xAC	; 172
+ 1ec:	9b 40       	sbci	r25, 0x0B	; 11
+ 1ee:	af 43       	sbci	r26, 0x3F	; 63
+   {
+	    uint8_t messaged;
+	    messaged = 0x0B;
+	    transmit_UART0(messaged);
+ 1f0:	bf 43       	sbci	r27, 0x3F	; 63
+ 1f2:	29 f4       	brne	.+10     	; 0x1fe <__vector_18+0x136>
+ 1f4:	8b e0       	ldi	r24, 0x0B	; 11
+	   //transmit_string_UART0(buffer);
+	   dop = 0;
+ 1f6:	28 d1       	rcall	.+592    	; 0x448 <transmit_UART0>
+ 1f8:	10 92 02 01 	sts	0x0102, r1	; 0x800102 <dop>
+   }
+   ///Geodetic System
+   else if(buffer == 0x3F3F0EAC)
+ 1fc:	23 c0       	rjmp	.+70     	; 0x244 <__vector_18+0x17c>
+ 1fe:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 202:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 206:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 20a:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 20e:	8c 3a       	cpi	r24, 0xAC	; 172
+ 210:	9e 40       	sbci	r25, 0x0E	; 14
+ 212:	af 43       	sbci	r26, 0x3F	; 63
+   {
+	    uint8_t messageg;
+	    messageg = 0x0E;
+	    transmit_UART0(messageg);
+ 214:	bf 43       	sbci	r27, 0x3F	; 63
+ 216:	29 f4       	brne	.+10     	; 0x222 <__vector_18+0x15a>
+ 218:	8e e0       	ldi	r24, 0x0E	; 14
+	   //transmit_string_UART0(buffer);
+	   geo = 0;
+ 21a:	16 d1       	rcall	.+556    	; 0x448 <transmit_UART0>
+ 21c:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <geo>
+   }
+   ///Time
+   else if(buffer == 0x3F3F0FAC)
+ 220:	11 c0       	rjmp	.+34     	; 0x244 <__vector_18+0x17c>
+ 222:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <buffer>
+ 226:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <buffer+0x1>
+ 22a:	a0 91 0a 01 	lds	r26, 0x010A	; 0x80010a <buffer+0x2>
+ 22e:	b0 91 0b 01 	lds	r27, 0x010B	; 0x80010b <buffer+0x3>
+ 232:	8c 3a       	cpi	r24, 0xAC	; 172
+ 234:	9f 40       	sbci	r25, 0x0F	; 15
+ 236:	af 43       	sbci	r26, 0x3F	; 63
+   {
+	    uint8_t messaget;
+	    messaget = 0x0F;
+	    transmit_UART0(messaget);
+ 238:	bf 43       	sbci	r27, 0x3F	; 63
+ 23a:	21 f4       	brne	.+8      	; 0x244 <__vector_18+0x17c>
+ 23c:	8f e0       	ldi	r24, 0x0F	; 15
+	   //transmit_string_UART0(buffer);
+	   time = 0;
+ 23e:	04 d1       	rcall	.+520    	; 0x448 <transmit_UART0>
+ 240:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__data_start>
+   }
+  ///Check if the last byte was for position
+  if(pos < 13)
+ 244:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 248:	8d 30       	cpi	r24, 0x0D	; 13
+  {
+    //uint8_t message;
+    //message = 0x04;
+    //transmit_UART0(message);
+    if(pos>0 && pos<5)
+ 24a:	38 f5       	brcc	.+78     	; 0x29a <__vector_18+0x1d2>
+ 24c:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 250:	88 23       	and	r24, r24
+ 252:	41 f0       	breq	.+16     	; 0x264 <__vector_18+0x19c>
+ 254:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+	{
+		//x = x >> 8;
+		//x &= 0x00FFFFFF;
+        //x |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 258:	85 30       	cpi	r24, 0x05	; 5
+ 25a:	20 f4       	brcc	.+8      	; 0x264 <__vector_18+0x19c>
+ 25c:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+		//transmit_string_UART0(ptr);
+        //sprintf(arrayx,"%x %x",last_byte);transmit_string_UART0(arrayx);
+        //
+        //transmit_UART0('\r');
+	}
+	else if (pos<9)
+ 260:	f3 d0       	rcall	.+486    	; 0x448 <transmit_UART0>
+ 262:	0f c0       	rjmp	.+30     	; 0x282 <__vector_18+0x1ba>
+ 264:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+	{
+		//y = y >> 8;
+		//y &= 0x00FFFFFF;
+		//y |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 268:	89 30       	cpi	r24, 0x09	; 9
+ 26a:	20 f4       	brcc	.+8      	; 0x274 <__vector_18+0x1ac>
+ 26c:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+		//sprintf(arrayy,"%x %x",last_byte);transmit_string_UART0(arrayy);
+		//
+		//transmit_UART0('\r');
+	}
+	
+	else if(pos<13)
+ 270:	eb d0       	rcall	.+470    	; 0x448 <transmit_UART0>
+ 272:	07 c0       	rjmp	.+14     	; 0x282 <__vector_18+0x1ba>
+ 274:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+	{
+		//z = z >> 8;
+		//z &= 0x00FFFFFF;
+		//z |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 278:	8d 30       	cpi	r24, 0x0D	; 13
+ 27a:	18 f4       	brcc	.+6      	; 0x282 <__vector_18+0x1ba>
+ 27c:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+		//sprintf(arrayz,"%x %x",last_byte);transmit_string_UART0(arrayz);
+		//
+		//transmit_UART0('\r');
+	}
+    ///* Increment position and terminate it if full
+    pos++;
+ 280:	e3 d0       	rcall	.+454    	; 0x448 <transmit_UART0>
+ 282:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+ 286:	8f 5f       	subi	r24, 0xFF	; 255
+    if(pos == 13)
+ 288:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <pos>
+ 28c:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <pos>
+	{
+      pos = 0xFF;
+ 290:	8d 30       	cpi	r24, 0x0D	; 13
+ 292:	19 f4       	brne	.+6      	; 0x29a <__vector_18+0x1d2>
+ 294:	8f ef       	ldi	r24, 0xFF	; 255
+	   }
+	   
+  }
+  
+  ///Check if the last byte was for velocity
+  if(vel < 12)
+ 296:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <pos>
+ 29a:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+  {
+	//uint8_t message;
+	//message = 0x05  ;
+	//transmit_UART0(message);
+    if(vel < 4)
+ 29e:	8c 30       	cpi	r24, 0x0C	; 12
+ 2a0:	18 f5       	brcc	.+70     	; 0x2e8 <__vector_18+0x220>
+ 2a2:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+	{
+		//v_x = v_x >> 8;
+		//v_x &= 0x00FFFFFF;
+        //v_x |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 2a6:	84 30       	cpi	r24, 0x04	; 4
+ 2a8:	20 f4       	brcc	.+8      	; 0x2b2 <__vector_18+0x1ea>
+ 2aa:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+		//sprintf(arrayx,"%x %x",last_byte);transmit_string_UART0(arrayx);
+		//
+		//transmit_UART0('\r');
+		
+	}
+	else if(vel < 8)
+ 2ae:	cc d0       	rcall	.+408    	; 0x448 <transmit_UART0>
+ 2b0:	0f c0       	rjmp	.+30     	; 0x2d0 <__vector_18+0x208>
+ 2b2:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+	{
+		
+		//v_y = v_y >> 8;
+		//v_y &= 0x00FFFFFF;
+        //v_y |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 2b6:	88 30       	cpi	r24, 0x08	; 8
+ 2b8:	20 f4       	brcc	.+8      	; 0x2c2 <__vector_18+0x1fa>
+ 2ba:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+		//sprintf(arrayy,"%x %x",last_byte);transmit_string_UART0(arrayy);
+		//
+		//transmit_UART0('\r');
+	}
+	else if(vel < 12)
+ 2be:	c4 d0       	rcall	.+392    	; 0x448 <transmit_UART0>
+ 2c0:	07 c0       	rjmp	.+14     	; 0x2d0 <__vector_18+0x208>
+ 2c2:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+	{
+		//v_z = v_z >> 8;
+		//v_z &= 0x00FFFFFF;
+        //v_z |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 2c6:	8c 30       	cpi	r24, 0x0C	; 12
+ 2c8:	18 f4       	brcc	.+6      	; 0x2d0 <__vector_18+0x208>
+ 2ca:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+		//sprintf(arrayz,"%x %x",last_byte);transmit_string_UART0(arrayz);
+		//
+		//transmit_UART0('\r');
+	}
+	//*((uint8_t *)&gps.v_x + vel) = last_byte;
+	vel++;
+ 2ce:	bc d0       	rcall	.+376    	; 0x448 <transmit_UART0>
+ 2d0:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+ 2d4:	8f 5f       	subi	r24, 0xFF	; 255
+    if(vel == 12)
+ 2d6:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <vel>
+ 2da:	80 91 03 01 	lds	r24, 0x0103	; 0x800103 <vel>
+     {
+		  vel = 0xFF;
+ 2de:	8c 30       	cpi	r24, 0x0C	; 12
+ 2e0:	19 f4       	brne	.+6      	; 0x2e8 <__vector_18+0x220>
+
+	 }
+  }
+  
+  ///Check if the last byte was for PDOP
+  if(dop < 4)
+ 2e2:	8f ef       	ldi	r24, 0xFF	; 255
+ 2e4:	80 93 03 01 	sts	0x0103, r24	; 0x800103 <vel>
+ 2e8:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+  {
+    if(dop >= 2)
+ 2ec:	84 30       	cpi	r24, 0x04	; 4
+ 2ee:	98 f4       	brcc	.+38     	; 0x316 <__vector_18+0x24e>
+ 2f0:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+    {
+		 //pdop =  pdop >> 8;
+		 //pdop &= 0x00FF;
+         //pdop |= ((uint16_t) last_byte)<<8;
+		 transmit_UART0(last_byte);
+ 2f4:	82 30       	cpi	r24, 0x02	; 2
+ 2f6:	18 f0       	brcs	.+6      	; 0x2fe <__vector_18+0x236>
+ 2f8:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+     }
+//	*((uint8_t *)&pdop + (dop - 2)) = last_byte;
+	dop++;
+ 2fc:	a5 d0       	rcall	.+330    	; 0x448 <transmit_UART0>
+ 2fe:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+ 302:	8f 5f       	subi	r24, 0xFF	; 255
+    if(dop == 4)
+ 304:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <dop>
+ 308:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <dop>
+      dop = 0xFF;
+ 30c:	84 30       	cpi	r24, 0x04	; 4
+ 30e:	19 f4       	brne	.+6      	; 0x316 <__vector_18+0x24e>
+ 310:	8f ef       	ldi	r24, 0xFF	; 255
+  }
+  
+  ///Check if the last byte was for Geodetic position
+  if(geo < 16)
+ 312:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <dop>
+ 316:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+  {
+	if(geo < 4);  
+ 31a:	80 31       	cpi	r24, 0x10	; 16
+ 31c:	38 f5       	brcc	.+78     	; 0x36c <__vector_18+0x2a4>
+ 31e:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+    else if(geo < 8)
+ 322:	84 30       	cpi	r24, 0x04	; 4
+ 324:	b8 f0       	brcs	.+46     	; 0x354 <__vector_18+0x28c>
+	{
+		//lat = lat >> 8;
+		//lat &= 0x00FFFFFF;
+		//lat |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 326:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 32a:	88 30       	cpi	r24, 0x08	; 8
+ 32c:	20 f4       	brcc	.+8      	; 0x336 <__vector_18+0x26e>
+ 32e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+	}
+	else if(geo < 12)
+ 332:	8a d0       	rcall	.+276    	; 0x448 <transmit_UART0>
+ 334:	0f c0       	rjmp	.+30     	; 0x354 <__vector_18+0x28c>
+	{
+		//lon = lon >> 8;
+		//lon &= 0x00FFFFFF;
+		//lon |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 336:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 33a:	8c 30       	cpi	r24, 0x0C	; 12
+ 33c:	20 f4       	brcc	.+8      	; 0x346 <__vector_18+0x27e>
+ 33e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+	}
+	else if(geo < 16 )
+ 342:	82 d0       	rcall	.+260    	; 0x448 <transmit_UART0>
+ 344:	07 c0       	rjmp	.+14     	; 0x354 <__vector_18+0x28c>
+ 346:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+	{
+		//alt = alt >> 8;
+		//alt &= 0x00FFFFFF;
+		//alt |= ((uint32_t) last_byte)<<24;
+		transmit_UART0(last_byte);
+ 34a:	80 31       	cpi	r24, 0x10	; 16
+ 34c:	18 f4       	brcc	.+6      	; 0x354 <__vector_18+0x28c>
+ 34e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+	}
+	
+//    *((uint8_t *)&gps.lat + (geo - 4)) = last_byte;
+    
+    geo++;
+ 352:	7a d0       	rcall	.+244    	; 0x448 <transmit_UART0>
+ 354:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+ 358:	8f 5f       	subi	r24, 0xFF	; 255
+    if(geo == 16)
+ 35a:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <geo>
+ 35e:	80 91 01 01 	lds	r24, 0x0101	; 0x800101 <geo>
+	{
+      geo = 0xFF;
+ 362:	80 31       	cpi	r24, 0x10	; 16
+ 364:	19 f4       	brne	.+6      	; 0x36c <__vector_18+0x2a4>
+
+	}
+  }
+  
+  ///Check if the last byte was for Time
+  if(time < 7)
+ 366:	8f ef       	ldi	r24, 0xFF	; 255
+ 368:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <geo>
+ 36c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+  {
+	  
+	  if(time == 0)
+ 370:	87 30       	cpi	r24, 0x07	; 7
+ 372:	08 f0       	brcs	.+2      	; 0x376 <__vector_18+0x2ae>
+ 374:	42 c0       	rjmp	.+132    	; 0x3fa <__vector_18+0x332>
+	  {
+		  //hours = last_byte;
+		  transmit_UART0(last_byte);
+ 376:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 37a:	81 11       	cpse	r24, r1
+ 37c:	04 c0       	rjmp	.+8      	; 0x386 <__vector_18+0x2be>
+	  }
+	  else if(time == 1)
+ 37e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+ 382:	62 d0       	rcall	.+196    	; 0x448 <transmit_UART0>
+ 384:	27 c0       	rjmp	.+78     	; 0x3d4 <__vector_18+0x30c>
+	  {
+		  //minutes = last_byte;
+		  transmit_UART0(last_byte);
+ 386:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 38a:	81 30       	cpi	r24, 0x01	; 1
+ 38c:	21 f4       	brne	.+8      	; 0x396 <__vector_18+0x2ce>
+	  }
+	  else if(time == 2)
+ 38e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+ 392:	5a d0       	rcall	.+180    	; 0x448 <transmit_UART0>
+ 394:	1f c0       	rjmp	.+62     	; 0x3d4 <__vector_18+0x30c>
+	  {
+		  //seconds = last_byte;
+		  transmit_UART0(last_byte);
+ 396:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 39a:	82 30       	cpi	r24, 0x02	; 2
+ 39c:	21 f4       	brne	.+8      	; 0x3a6 <__vector_18+0x2de>
+	  }
+	  else if(time == 3)
+ 39e:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+ 3a2:	52 d0       	rcall	.+164    	; 0x448 <transmit_UART0>
+	  {
+		  //date = last_byte;
+		  transmit_UART0(last_byte);
+ 3a4:	17 c0       	rjmp	.+46     	; 0x3d4 <__vector_18+0x30c>
+ 3a6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3aa:	83 30       	cpi	r24, 0x03	; 3
+	  }else if(time == 4)
+ 3ac:	21 f4       	brne	.+8      	; 0x3b6 <__vector_18+0x2ee>
+ 3ae:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+ 3b2:	4a d0       	rcall	.+148    	; 0x448 <transmit_UART0>
+	  {
+		  //month = last_byte;
+		  transmit_UART0(last_byte);
+ 3b4:	0f c0       	rjmp	.+30     	; 0x3d4 <__vector_18+0x30c>
+ 3b6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3ba:	84 30       	cpi	r24, 0x04	; 4
+ 3bc:	21 f4       	brne	.+8      	; 0x3c6 <__vector_18+0x2fe>
+	  }else if(time > 4)
+ 3be:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+ 3c2:	42 d0       	rcall	.+132    	; 0x448 <transmit_UART0>
+ 3c4:	07 c0       	rjmp	.+14     	; 0x3d4 <__vector_18+0x30c>
+	  {
+		  //year = year >> 8;
+		  //year &= 0x00FF;
+		  //year |= ((uint16_t) last_byte)<<8;
+		  transmit_UART0(last_byte);
+ 3c6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 3ca:	85 30       	cpi	r24, 0x05	; 5
+ 3cc:	18 f0       	brcs	.+6      	; 0x3d4 <__vector_18+0x30c>
+
+	  }
+    //*((uint8_t *)&gps.hours + time) = last_byte;
+    
+    time++;
+ 3ce:	80 91 07 01 	lds	r24, 0x0107	; 0x800107 <last_byte>
+ 3d2:	3a d0       	rcall	.+116    	; 0x448 <transmit_UART0>
+ 3d4:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+    if(time == 7)
+ 3d8:	8f 5f       	subi	r24, 0xFF	; 255
+ 3da:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+ 3de:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+    {
+      time = 0xFF;
+ 3e2:	87 30       	cpi	r24, 0x07	; 7
+ 3e4:	51 f4       	brne	.+20     	; 0x3fa <__vector_18+0x332>
+      ///* * The Entire message has been read
+      message_end = 1;
+ 3e6:	8f ef       	ldi	r24, 0xFF	; 255
+ 3e8:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+	 //  UCSR0B &= ~(_BV(RXCIE0)); //remember this change iterrupt off
+	 flag_gps = 0;
+ 3ec:	81 e0       	ldi	r24, 0x01	; 1
+ 3ee:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <__data_end>
+ 3f2:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <flag_gps+0x1>
+		//}
+	//}
+	//sei();
+	  
+	  }
+}
+ 3f6:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <flag_gps>
+ 3fa:	ff 91       	pop	r31
+ 3fc:	ef 91       	pop	r30
+ 3fe:	bf 91       	pop	r27
+ 400:	af 91       	pop	r26
+ 402:	9f 91       	pop	r25
+ 404:	8f 91       	pop	r24
+ 406:	7f 91       	pop	r23
+ 408:	6f 91       	pop	r22
+ 40a:	5f 91       	pop	r21
+ 40c:	4f 91       	pop	r20
+ 40e:	3f 91       	pop	r19
+ 410:	2f 91       	pop	r18
+ 412:	0f 90       	pop	r0
+ 414:	0b be       	out	0x3b, r0	; 59
+ 416:	0f 90       	pop	r0
+ 418:	0f be       	out	0x3f, r0	; 63
+ 41a:	0f 90       	pop	r0
+ 41c:	1f 90       	pop	r1
+ 41e:	18 95       	reti
+
+00000420 <main>:
 #include "led_tests.h"
 #include "gps.h"
 
 int main(void)
 
 {
- 178:	02 d0       	rcall	.+4      	; 0x17e <init_UART0>
- 17a:	78 94       	sei
- 17c:	ff cf       	rjmp	.-2      	; 0x17c <main+0x4>
+ 420:	02 d0       	rcall	.+4      	; 0x426 <init_UART0>
+ 422:	78 94       	sei
+ 424:	ff cf       	rjmp	.-2      	; 0x424 <main+0x4>
 
-0000017e <init_UART0>:
-    	while ( !(UCSR1A & (_BV(UDRE1))) );
-    	///* Start transmission
-    	UDR1 = buffer[i];
-		i++;	
-	}
+00000426 <init_UART0>:
+void transmit_UART1(char data)
+{
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR1A & (_BV(UDRE1))) );
+  //* Start transmission
+  UDR1 = data;
+ 426:	1b b8       	out	0x0b, r1	; 11
+ 428:	1a b8       	out	0x0a, r1	; 10
+ 42a:	e5 e9       	ldi	r30, 0x95	; 149
+ 42c:	f0 e0       	ldi	r31, 0x00	; 0
+ 42e:	10 82       	st	Z, r1
+ 430:	59 9a       	sbi	0x0b, 1	; 11
+ 432:	8a b1       	in	r24, 0x0a	; 10
+ 434:	88 69       	ori	r24, 0x98	; 152
+ 436:	8a b9       	out	0x0a, r24	; 10
+ 438:	80 81       	ld	r24, Z
+ 43a:	8e 60       	ori	r24, 0x0E	; 14
+ 43c:	80 83       	st	Z, r24
+ 43e:	87 e6       	ldi	r24, 0x67	; 103
+ 440:	89 b9       	out	0x09, r24	; 9
+ 442:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
+ 446:	08 95       	ret
+
+00000448 <transmit_UART0>:
 }
- 17e:	1b b8       	out	0x0b, r1	; 11
- 180:	1a b8       	out	0x0a, r1	; 10
- 182:	e5 e9       	ldi	r30, 0x95	; 149
- 184:	f0 e0       	ldi	r31, 0x00	; 0
- 186:	10 82       	st	Z, r1
- 188:	59 9a       	sbi	0x0b, 1	; 11
- 18a:	8a b1       	in	r24, 0x0a	; 10
- 18c:	88 69       	ori	r24, 0x98	; 152
- 18e:	8a b9       	out	0x0a, r24	; 10
- 190:	80 81       	ld	r24, Z
- 192:	8e 60       	ori	r24, 0x0E	; 14
- 194:	80 83       	st	Z, r24
- 196:	87 e6       	ldi	r24, 0x67	; 103
- 198:	89 b9       	out	0x09, r24	; 9
- 19a:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
- 19e:	08 95       	ret
 
-000001a0 <transmit_string_UART0>:
-
-
-void transmit_string_UART0(char *buffer)
+void transmit_UART0(uint8_t data)
 {
- 1a0:	fc 01       	movw	r30, r24
-  	uint16_t i = 0;
-  	///Loop through the data
-  	while(buffer[i] != '\0')
- 1a2:	90 81       	ld	r25, Z
- 1a4:	99 23       	and	r25, r25
- 1a6:	39 f0       	breq	.+14     	; 0x1b6 <transmit_string_UART0+0x16>
- 1a8:	31 96       	adiw	r30, 0x01	; 1
-  	{
-    	///* Wait for empty transmit buffer 
-    	while ( !(UCSR0A & (_BV(UDRE0))) );
- 1aa:	5d 9b       	sbis	0x0b, 5	; 11
- 1ac:	fe cf       	rjmp	.-4      	; 0x1aa <transmit_string_UART0+0xa>
-    	///* Start transmission
-    	UDR0 = buffer[i];
- 1ae:	9c b9       	out	0x0c, r25	; 12
+  //* Wait for empty transmit buffer 
+  while ( !(UCSR0A & (_BV(UDRE0))) );
+ 448:	5d 9b       	sbis	0x0b, 5	; 11
+ 44a:	fe cf       	rjmp	.-4      	; 0x448 <transmit_UART0>
+  //* Start transmission
+  UDR0 = data;
+ 44c:	8c b9       	out	0x0c, r24	; 12
+ 44e:	08 95       	ret
 
-void transmit_string_UART0(char *buffer)
-{
-  	uint16_t i = 0;
-  	///Loop through the data
-  	while(buffer[i] != '\0')
- 1b0:	91 91       	ld	r25, Z+
- 1b2:	91 11       	cpse	r25, r1
- 1b4:	fa cf       	rjmp	.-12     	; 0x1aa <transmit_string_UART0+0xa>
- 1b6:	08 95       	ret
+00000450 <_exit>:
+ 450:	f8 94       	cli
 
-000001b8 <_exit>:
- 1b8:	f8 94       	cli
-
-000001ba <__stop_program>:
- 1ba:	ff cf       	rjmp	.-2      	; 0x1ba <__stop_program>
+00000452 <__stop_program>:
+ 452:	ff cf       	rjmp	.-2      	; 0x452 <__stop_program>

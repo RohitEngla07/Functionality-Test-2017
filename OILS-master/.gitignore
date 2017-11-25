@@ -1,0 +1,17 @@
+*.xlsx
+*.mat
+*.lib
+*.mexw64
+*.exp
+*.atsln
+*.cproj
+*.xml
+
+
+Logs/
+slprj/
+OBC_Code/.vs
+OBC_Code/Debug
+
+
+

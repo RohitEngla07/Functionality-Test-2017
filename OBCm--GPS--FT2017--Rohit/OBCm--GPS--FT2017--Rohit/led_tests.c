@@ -12,7 +12,7 @@
 
 void led_test_m_config(void)
 {
-	DDRA=0x0F;
+	DDRA=0xFF;
 	
 	transmit_string_UART0("_a_");
 		

@@ -9,16 +9,6 @@
 #ifndef GPS_H_
 #define GPS_H_
 
-void get_position();
-
-void get_velocity();
-
-void get_time();
-
-void get_DOP();
-
-void print_data();
-
-void message_ID();
+void init_UART_GPS();
 
 #endif /* GPS_H_ */

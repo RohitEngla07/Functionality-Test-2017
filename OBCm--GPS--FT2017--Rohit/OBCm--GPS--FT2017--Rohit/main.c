@@ -19,10 +19,12 @@
 int main(void)
 
 {
+	//init_UART_GPS();
 	init_UART0();
 	sei();
     while (1) 
     {
-		
+	//led_test_m_config();
     }
 }
+
