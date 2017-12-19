@@ -96,6 +96,7 @@ void poll_function()
 	flag_gps = 1;
 }
 
+/*
 ISR(USART0_RX_vect)
 {
 	uint8_t recv = UDR0;
@@ -374,7 +375,7 @@ ISR(USART0_RX_vect)
   }	  
 	  }
 }
-
+*/
 
 
 

@@ -10,5 +10,6 @@
 #define GPS_H_
 
 void init_UART_GPS();
+void poll_function();
 
 #endif /* GPS_H_ */
